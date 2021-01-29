@@ -36,7 +36,10 @@ pipeline{
         }
         stage('Upload Windows') {
             when {
-                expression { env.Windows == 'true' }
+                allOf {
+                    branch 'master';
+                    expression { env.Windows == 'true' }
+                }
             }
             steps {
                 bat '''
@@ -92,7 +95,10 @@ pipeline{
         }
         stage('Upload Web') {
             when {
-                expression { env.Web == 'true' }
+                allOf {
+                    branch 'master';
+                    expression { env.Web == 'true' }
+                }
             }
             steps {
                 bat '''
