@@ -5,11 +5,12 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
+    
     public class PoolSystem
     {
         public int LoadedPrefabs;
         public Queue<GameObject> CurrentPool = new Queue<GameObject>();
-        public List<GameObject> AllPrefabs;
+        public List<GameObject> AllPrefabs = new List<GameObject>();
         public Queue<GameObject> ShuffleQueue = new Queue<GameObject>();
 
         public void Shuffle()
