@@ -3,21 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
-using Physics = UnityEngine.Physics;
+using UnityEngine.Tilemaps;
+using Physics = DefaultNamespace.Physics;
 
 public class Player : MonoBehaviour
 {
-    public static Player Instace;
-    public Physics ps= new Physics();
-    void Start()
+    public static Player Instance;
+    public Physics physics;
+    private Vector3 _newPosition;
+    public float translationSpeed;
+    private Vector3 _lastPosition;
+
+    void Awake()
     {
-        Instace = this;
+        Instance = this;
+
+        physics = new Physics();
+
+        if (physics.Move(transform.position, Vector3Int.zero, out var newPosition))
+        {
+            _newPosition = _lastPosition = newPosition;
+            transform.position = physics.SetPosition(_newPosition);
+        }
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        var pos = _lastPosition = Vector3.Lerp(_lastPosition, _newPosition, Time.deltaTime * translationSpeed);
+        transform.position = physics.SetPosition(pos);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -29,11 +43,13 @@ public class Player : MonoBehaviour
     {
         Bootstrap.Instance.GameSystem.state = GameSystem.GameStates.GameOver;
         Bootstrap.Instance.ScoreManager.CheckHigScore();
-        
     }
 
     private void FixedUpdate()
     {
-        
+        if (physics.Collide(transform.position, out var newPosition))
+        {
+            _newPosition = newPosition;
+        }
     }
 }

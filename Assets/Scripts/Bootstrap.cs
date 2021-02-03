@@ -9,16 +9,22 @@ namespace DefaultNamespace
         {
             get
             {
-                if(_instance ==null){
-                    var obj = new GameObject("Bootstrap");
-                    obj.AddComponent<Bootstrap>();
+                if (_instance == null)
+                {
+                    var obj = FindObjectOfType<Bootstrap>().gameObject;
+                    if (obj == null)
+                    {
+                        obj = new GameObject("Bootstrap");
+                        obj.AddComponent<Bootstrap>();
+                    }
+                    _instance = obj.GetComponent<Bootstrap>();
                 }
 
                 return _instance;
             }
         }
 
-        private static Bootstrap _instance ;
+        private static Bootstrap _instance;
 
 
         public PoolSystem PoolSystem = new PoolSystem();
@@ -28,8 +34,8 @@ namespace DefaultNamespace
 
         private void Awake()
         {
-            _instance = this;
+            if (_instance == null)
+                _instance = this;
         }
-        
     }
 }
