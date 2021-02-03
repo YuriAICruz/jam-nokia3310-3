@@ -13,6 +13,29 @@ public class InputListener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("d"))
+        {
+            
+        }
+        if (Input.GetKeyDown("a"))
+        {
+            
+        }
+        if (Input.GetKeyDown("w"))
+        {
+            
+        }
+        if (Input.GetKeyDown("s"))
+        {
+            
+        }
+        if (Input.GetKeyDown("e"))
+        {
+            
+        }
+        if (Input.GetKeyDown("space"))
+        {
+            
+        }
     }
 }
