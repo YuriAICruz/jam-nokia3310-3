@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DefaultNamespace
 {
@@ -28,14 +29,18 @@ namespace DefaultNamespace
 
 
         public PoolSystem PoolSystem = new PoolSystem();
-        public GameSystem GameSystem = new GameSystem();
+        public GameSystem GameSystem;
+        public BgmSystem BgmSystem;
         public ScoreManager ScoreManager = new ScoreManager();
         public Settings Settings;
-
+        
         private void Awake()
         {
             if (_instance == null)
                 _instance = this;
+            
+            BgmSystem = new BgmSystem();
+            GameSystem = new GameSystem(BgmSystem, Settings);
         }
     }
 }

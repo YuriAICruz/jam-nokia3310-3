@@ -20,13 +20,13 @@ namespace DefaultNamespace.UI
 
         private void PlayAgain()
         {
-            Bootstrap.Instance.GameSystem.state = GameSystem.GameStates.GameStart;
+            Bootstrap.Instance.GameSystem.State = GameSystem.GameStates.GameStart;
             Painel.SetActive(false);
         }
 
         private void OpenMenu()
         {
-            Bootstrap.Instance.GameSystem.state = GameSystem.GameStates.Menu;
+            Bootstrap.Instance.GameSystem.State = GameSystem.GameStates.Menu;
             Painel.SetActive(false);
             MainMenu.SetActive(true);
         }

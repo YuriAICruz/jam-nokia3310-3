@@ -9,13 +9,26 @@ namespace DefaultNamespace.GamePlay
         private Settings _settings;
         private Physics _physics;
         private Vector3 _position;
+        private Vector3 _startPosition;
+        private GameSystem _gameSystem;
 
         private void Awake()
         {
             _settings = Bootstrap.Instance.Settings;
             _physics = new Physics();
 
-            _position = transform.position;
+            _position = _startPosition = transform.position;
+
+            _gameSystem = Bootstrap.Instance.GameSystem;
+            _gameSystem.GameStatesChange += GameStatesChange;
+        }
+
+        private void GameStatesChange(GameSystem.GameStates state, GameSystem.GameStates oldState)
+        {
+            if (state == GameSystem.GameStates.GameStart)
+            {
+                _position = transform.position = _startPosition;
+            }
         }
 
         private void Update()

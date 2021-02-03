@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     private Vector3 _newPosition;
     public float translationSpeed;
     private Vector3 _lastPosition;
+    private GameSystem _gameSystem;
+    private Vector3 _startPosition;
 
     void Awake()
     {
@@ -25,8 +27,20 @@ public class Player : MonoBehaviour
             _newPosition = _lastPosition = newPosition;
             transform.position = physics.SetPosition(_newPosition);
         }
+
+        _startPosition = transform.position;
+
+        _gameSystem = Bootstrap.Instance.GameSystem;
+        _gameSystem.GameStatesChange += GameStatesChange;
     }
 
+    private void GameStatesChange(GameSystem.GameStates state, GameSystem.GameStates oldState)
+    {
+        if (state == GameSystem.GameStates.GameStart)
+        {
+            transform.position = _lastPosition = _newPosition = _startPosition;
+        }
+    }
 
     void Update()
     {
@@ -41,7 +55,7 @@ public class Player : MonoBehaviour
 
     private void GameStop()
     {
-        Bootstrap.Instance.GameSystem.state = GameSystem.GameStates.GameOver;
+        Bootstrap.Instance.GameSystem.State = GameSystem.GameStates.GameOver;
         Bootstrap.Instance.ScoreManager.CheckHigScore();
     }
 
