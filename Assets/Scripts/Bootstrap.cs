@@ -27,12 +27,14 @@ namespace DefaultNamespace
 
         private static Bootstrap _instance;
 
-
-        public PoolSystem PoolSystem = new PoolSystem();
+        public PoolSystem PoolSystem;
         public GameSystem GameSystem;
         public BgmSystem BgmSystem;
         public ScoreManager ScoreManager = new ScoreManager();
         public Settings Settings;
+        
+        [Space]
+        public PoolSystem.Block[] blocks;
         
         private void Awake()
         {
@@ -40,7 +42,8 @@ namespace DefaultNamespace
                 _instance = this;
             
             BgmSystem = new BgmSystem();
-            GameSystem = new GameSystem(BgmSystem, Settings);
+            PoolSystem = new PoolSystem(Settings, blocks);
+            GameSystem = new GameSystem(BgmSystem, PoolSystem, Settings);
         }
     }
 }
