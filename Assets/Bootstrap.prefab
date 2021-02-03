@@ -48,5 +48,5 @@ MonoBehaviour:
     StepSize: 1
     JumpSpeed: 0.1
     JumpDuration: 0.1
-    ScrollSpeed: 0.1
+    ScrollSpeed: 8
     ScrollDirection: {x: -1, y: 0, z: 0}
