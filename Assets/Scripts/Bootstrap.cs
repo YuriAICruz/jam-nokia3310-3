@@ -24,6 +24,7 @@ namespace DefaultNamespace
         public PoolSystem PoolSystem = new PoolSystem();
         public GameSystem GameSystem = new GameSystem();
         public ScoreManager ScoreManager = new ScoreManager();
+        public Settings Settings;
 
         private void Awake()
         {

@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
+using Physics = UnityEngine.Physics;
 
 public class Player : MonoBehaviour
 {
     public static Player Instace;
+    public Physics ps= new Physics();
     void Start()
     {
         Instace = this;
@@ -27,6 +29,11 @@ public class Player : MonoBehaviour
     {
         Bootstrap.Instance.GameSystem.state = GameSystem.GameStates.GameOver;
         Bootstrap.Instance.ScoreManager.CheckHigScore();
+        
+    }
+
+    private void FixedUpdate()
+    {
         
     }
 }
