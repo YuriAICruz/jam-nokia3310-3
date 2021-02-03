@@ -26,7 +26,7 @@ namespace DefaultNamespace
         }
 
         private static Bootstrap _instance;
-
+        public InputListener inpListener;
         public PoolSystem PoolSystem;
         public GameSystem GameSystem;
         public BgmSystem BgmSystem;
@@ -40,7 +40,8 @@ namespace DefaultNamespace
         {
             if (_instance == null)
                 _instance = this;
-            
+
+            inpListener = FindObjectOfType<InputListener>();
             BgmSystem = new BgmSystem();
             PoolSystem = new PoolSystem(Settings, blocks);
             GameSystem = new GameSystem(BgmSystem, PoolSystem, Settings);
