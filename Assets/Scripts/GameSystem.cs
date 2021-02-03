@@ -16,6 +16,7 @@ namespace DefaultNamespace
         }
 
         private readonly BgmSystem _bgm;
+        private readonly PoolSystem _poolSystem;
         private readonly Settings _settings;
 
         public event Action<GameStates, GameStates> GameStatesChange;
@@ -46,9 +47,10 @@ namespace DefaultNamespace
             }
         }
 
-        public GameSystem(BgmSystem bgm, Settings settings)
+        public GameSystem(BgmSystem bgm, PoolSystem poolSystem, Settings settings)
         {
             _bgm = bgm;
+            _poolSystem = poolSystem;
             _settings = settings;
 
             Menu();
@@ -64,6 +66,8 @@ namespace DefaultNamespace
         {
             _gameStart = Time.time;
             _bgm.Play(BgmSystem.Music.Gameplay);
+
+            _poolSystem.Reset();
 
             _settings.ScrollSpeed = _settings.MinScrollSpeed;
         }
