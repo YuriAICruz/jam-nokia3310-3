@@ -122,10 +122,26 @@ namespace DefaultNamespace
 
         public void Reset()
         {
-            var rnd = UnityEngine.Random.Range(0, 1);
             _settings.CollidersMap.ClearAllTiles();
-            _settings.CollidersMap.SetTiles(_blocks[0].GetPositions(0), _blocks[0].GetTiles());
-            _settings.CollidersMap.SetTiles(_blocks[1].GetPositions(1), _blocks[0].GetTiles());
+            Populate();
+        }
+
+        private void Populate()
+        {
+            for (int i = 0; i < _blocks.Length; i++)
+            {
+                var indexes = new List<int>();
+                var rnd = UnityEngine.Random.Range(0, _blocks.Length);
+
+                while (indexes.Contains(rnd))
+                {
+                    rnd = UnityEngine.Random.Range(0, _blocks.Length);
+                }
+
+                indexes.Add(rnd);
+
+                _settings.CollidersMap.SetTiles(_blocks[rnd].GetPositions(i), _blocks[0].GetTiles());
+            }
         }
     }
 }
