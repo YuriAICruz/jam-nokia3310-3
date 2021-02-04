@@ -19,6 +19,7 @@ public class InputListener : MonoBehaviour
             if (Jump != null) Jump();
             Accept?.Invoke();
         }
+        
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Z))
         {
             CancelJump?.Invoke();
@@ -27,7 +28,6 @@ public class InputListener : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)  || Input.GetKeyDown(KeyCode.C))
         {
             if (GravityChange != null) GravityChange();
-            Accept?.Invoke();
         }
 
         if (Input.GetKeyDown(KeyCode.F)  || Input.GetKeyDown(KeyCode.X))

@@ -49,13 +49,16 @@ MonoBehaviour:
     GraphicsMap: {fileID: 0}
     StepSize: 1
     ReturnSpeed: 6
-    JumpDuration: 0.5
-    GravitySpeed: 10
+    JumpSpeed: 80
     TranslationSpeed: 10
+    JumpDuration: 0.5
+    GravitySpeed: 20
+    deathPosition: -45
     ScrollSpeed: 5
-    MaxScrollSpeed: 24
-    MinScrollSpeed: 12
+    MaxScrollSpeed: 32
+    MinScrollSpeed: 18
     ScrollDirection: {x: -1, y: 0, z: 0}
+    Acceleration: 1
     MenuSong: {fileID: 8300000, guid: 8053c7f8d0b972047a7b292a2a58dae4, type: 3}
     GameplaySong: {fileID: 8300000, guid: 3cacea4d6336ea74da15091ba59f9379, type: 3}
     Gravity: {x: 0, y: -1, z: 0}

@@ -36,6 +36,7 @@ namespace DefaultNamespace.UI
             _inputs = Bootstrap.Instance.inpListener;
             _inputs.Pause += Pause;
             _inputs.Navigate += Navigate;
+            _inputs.Accept += Accept;
 
             _gameTime = Bootstrap.Instance.GameTime;
 
@@ -52,6 +53,13 @@ namespace DefaultNamespace.UI
 
             SetMenuWindow(true);
             SetCreditsWindow(false);
+        }
+
+        private void Accept()
+        {
+            if (!_currentPanel) return;
+            
+            _currentPanel.Selection.onClick.Invoke();
         }
 
         private void Update()
@@ -78,7 +86,7 @@ namespace DefaultNamespace.UI
         private void SetPauseWindow(bool value)
         {
             if (_system.State != GameSystem.GameStates.GameStart) return;
-            
+
             PauseWindow.Object.SetActive(value);
             if (value)
                 UpdateNavigation(PauseWindow.Navigation);
@@ -101,6 +109,7 @@ namespace DefaultNamespace.UI
                     break;
                 case GameSystem.GameStates.GameStart:
                     SetMenuWindow(false);
+                    SetGameOverWindow(false);
                     break;
                 case GameSystem.GameStates.GameOver:
                     SetGameOverWindow(true);

@@ -64,12 +64,22 @@ namespace DefaultNamespace
 
         private void StartGame()
         {
-            _gameStart = Time.time;
+            _gameStart = GameTime.time;
             _bgm.Play(BgmSystem.Music.Gameplay);
 
             _poolSystem.Reset();
 
             _settings.ScrollSpeed = _settings.MinScrollSpeed;
+        }
+
+        public void PlayerDied()
+        {
+            State = GameStates.GameOver;
+        }
+
+        public void Update()
+        {
+            _settings.ScrollSpeed += Math.Min(_settings.MaxScrollSpeed - _settings.ScrollSpeed, GameTime.deltaTime * _settings.Acceleration);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace DefaultNamespace
         public static bool Paused { get; private set; }
         public bool paused => Paused;
 
-        private static float _scale;
+        private static float _scale = 1;
 
         public void Pause()
         {

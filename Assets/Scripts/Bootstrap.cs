@@ -55,6 +55,7 @@ namespace DefaultNamespace
         private void Update()
         {
             GameTime.Update();
+            GameSystem.Update();
         }
 
         private void FixedUpdate()
