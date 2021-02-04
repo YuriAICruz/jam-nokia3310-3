@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
@@ -21,5 +22,11 @@ public class Fire : MonoBehaviour
     void Update()
     {
         transform.position += -_settings.ScrollDirection * (Time.deltaTime * _settings.ScrollSpeed*2);
+        if (transform.position.x > 50)
+        {
+            gameObject.SetActive(false);
+        }
     }
+
+    
 }

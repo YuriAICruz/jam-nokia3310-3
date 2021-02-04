@@ -41,7 +41,12 @@ public class AttackPug : MonoBehaviour
             _fistTime = true;
         }
 
-        shot.transform.position = transform.position;
+        if (!shot.activeSelf)
+        {
+            shot.transform.position = transform.position;
+            shot.SetActive(true);
+        }
+
         _animator.SetBool("attak", false);
     }
 }
