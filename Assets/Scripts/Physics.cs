@@ -45,6 +45,20 @@ namespace DefaultNamespace
             return true;
         }
 
+        public bool Gravity(Vector3 position, out Vector3 outPosition)
+        {
+            var pos = _settings.CollidersMap.WorldToCell(position);
+
+            var tl = _settings.CollidersMap.GetTile(pos);
+            if (tl == null)
+            {
+                outPosition = position;
+                return false;
+            }
+
+            return true;
+        }
+
         public bool Move(Vector3 position, Vector3Int dir, out Vector3 outPosition)
         {
             var pos = _settings.CollidersMap.WorldToCell(position);
