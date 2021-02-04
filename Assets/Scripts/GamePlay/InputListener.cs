@@ -33,5 +33,22 @@ public class InputListener : MonoBehaviour
         {
             if (Attack != null) Attack();
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            
+        }
     }
 }
