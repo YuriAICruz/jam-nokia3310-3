@@ -26,21 +26,41 @@ namespace DefaultNamespace
         }
 
         private static Bootstrap _instance;
-
-
-        public PoolSystem PoolSystem = new PoolSystem();
+        
+        [HideInInspector]
+        public InputListener inpListener;
+        
+        public PoolSystem PoolSystem;
         public GameSystem GameSystem;
         public BgmSystem BgmSystem;
         public ScoreManager ScoreManager = new ScoreManager();
         public Settings Settings;
+        public GameTime GameTime;
+        
+        [Space]
+        public PoolSystem.Block[] blocks;
         
         private void Awake()
         {
             if (_instance == null)
                 _instance = this;
-            
+
+            inpListener = FindObjectOfType<InputListener>();
             BgmSystem = new BgmSystem();
-            GameSystem = new GameSystem(BgmSystem, Settings);
+            GameTime = new GameTime();
+            PoolSystem = new PoolSystem(Settings, blocks);
+            GameSystem = new GameSystem(BgmSystem, PoolSystem, Settings);
+        }
+
+        private void Update()
+        {
+            GameTime.Update();
+            GameSystem.Update();
+        }
+
+        private void FixedUpdate()
+        {
+            GameTime.FixedUpdate();
         }
     }
 }

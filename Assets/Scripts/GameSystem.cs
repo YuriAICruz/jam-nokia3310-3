@@ -16,6 +16,7 @@ namespace DefaultNamespace
         }
 
         private readonly BgmSystem _bgm;
+        private readonly PoolSystem _poolSystem;
         private readonly Settings _settings;
 
         public event Action<GameStates, GameStates> GameStatesChange;
@@ -39,6 +40,7 @@ namespace DefaultNamespace
                         StartGame();
                         break;
                     case GameStates.GameOver:
+                        GameOver();
                         break;
                 }
 
@@ -46,9 +48,15 @@ namespace DefaultNamespace
             }
         }
 
-        public GameSystem(BgmSystem bgm, Settings settings)
+        private void GameOver()
+        {
+            _bgm.Play(BgmSystem.Music.Pause);
+        }
+
+        public GameSystem(BgmSystem bgm, PoolSystem poolSystem, Settings settings)
         {
             _bgm = bgm;
+            _poolSystem = poolSystem;
             _settings = settings;
 
             Menu();
@@ -62,10 +70,22 @@ namespace DefaultNamespace
 
         private void StartGame()
         {
-            _gameStart = Time.time;
+            _gameStart = GameTime.time;
             _bgm.Play(BgmSystem.Music.Gameplay);
 
+            _poolSystem.Reset();
+
             _settings.ScrollSpeed = _settings.MinScrollSpeed;
+        }
+
+        public void PlayerDied()
+        {
+            State = GameStates.GameOver;
+        }
+
+        public void Update()
+        {
+            _settings.ScrollSpeed += Math.Min(_settings.MaxScrollSpeed - _settings.ScrollSpeed, GameTime.deltaTime * _settings.Acceleration);
         }
     }
 }

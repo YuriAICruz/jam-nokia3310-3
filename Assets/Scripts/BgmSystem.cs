@@ -9,7 +9,7 @@ namespace DefaultNamespace
 
         public enum Music
         {
-            Null = 0,
+            Pause = 0,
             Menu = 1,
             Gameplay =2
         }
@@ -25,7 +25,7 @@ namespace DefaultNamespace
             _player.Stop();
             switch (music)
             {
-                case Music.Null:
+                case Music.Pause:
                     break;
                 case Music.Menu:
                     _player.clip = _settings.MenuSong;

@@ -33,7 +33,7 @@ namespace DefaultNamespace.GamePlay
 
         private void Update()
         {
-            _position += _settings.ScrollDirection * (Time.deltaTime * _settings.ScrollSpeed);
+            _position += _settings.ScrollDirection * (GameTime.deltaTime * _settings.ScrollSpeed);
             transform.position = _physics.SetPosition(_position);
         }
     }

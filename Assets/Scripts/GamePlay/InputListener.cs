@@ -1,41 +1,60 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InputListener : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public event Action Jump;
+    public event Action GravityChange; 
+    public event Action Attack;
+    public event Action<Vector2Int> Navigate;
+    public event Action Pause;
+    public event Action Accept;
+    public event Action CancelJump;
+    private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Z))
+        {
+            if (Jump != null) Jump();
+            Accept?.Invoke();
+        }
         
-    }
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Z))
+        {
+            CancelJump?.Invoke();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown("d"))
+        if (Input.GetKeyDown(KeyCode.Space)  || Input.GetKeyDown(KeyCode.C))
         {
-            
+            if (GravityChange != null) GravityChange();
         }
-        if (Input.GetKeyDown("a"))
+
+        if (Input.GetKeyDown(KeyCode.F)  || Input.GetKeyDown(KeyCode.X))
         {
-            
+            if (Attack != null) Attack();
         }
-        if (Input.GetKeyDown("w"))
+
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            
+            Pause?.Invoke();
         }
-        if (Input.GetKeyDown("s"))
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            
+            Navigate?.Invoke(Vector2Int.left);
         }
-        if (Input.GetKeyDown("e"))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            
+            Navigate?.Invoke(Vector2Int.right);
         }
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            
+            Navigate?.Invoke(Vector2Int.up);
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Navigate?.Invoke(Vector2Int.down);
         }
     }
 }
