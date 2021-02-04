@@ -16,7 +16,6 @@ namespace DefaultNamespace
         public float TranslationSpeed = 10;
         public float JumpDuration;
         public float GravitySpeed;
-        public int deathPosition = -14;
 
         [Header("Scroll")] 
         public float ScrollSpeed;
@@ -29,6 +28,9 @@ namespace DefaultNamespace
         public AudioClip GameplaySong;
 
         public Vector3Int Gravity = Vector3Int.down;
+        
+        [Header("Death")]
+        public Vector2Int deathPosition = new Vector2Int(-14, 8);
 
         public void InvertGravity()
         {

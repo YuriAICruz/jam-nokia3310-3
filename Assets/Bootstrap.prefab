@@ -53,7 +53,6 @@ MonoBehaviour:
     TranslationSpeed: 10
     JumpDuration: 0.5
     GravitySpeed: 20
-    deathPosition: -45
     ScrollSpeed: 5
     MaxScrollSpeed: 32
     MinScrollSpeed: 18
@@ -62,6 +61,7 @@ MonoBehaviour:
     MenuSong: {fileID: 8300000, guid: 8053c7f8d0b972047a7b292a2a58dae4, type: 3}
     GameplaySong: {fileID: 8300000, guid: 3cacea4d6336ea74da15091ba59f9379, type: 3}
     Gravity: {x: 0, y: -1, z: 0}
+    deathPosition: {x: -46, y: 27}
   blocks:
   - data:
     - cellSize: 6
