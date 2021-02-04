@@ -33,6 +33,7 @@ namespace DefaultNamespace
         public ScoreManager ScoreManager = new ScoreManager();
         public Settings Settings;
         
+        
         [Space]
         public PoolSystem.Block[] blocks;
         

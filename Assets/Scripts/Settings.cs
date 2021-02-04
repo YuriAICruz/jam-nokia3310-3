@@ -8,6 +8,7 @@ namespace DefaultNamespace
     public class Settings
     {
         [Header("Tilemaps")] public Tilemap CollidersMap;
+        public Tilemap GraphicsMap;
 
         [Header("Player")] public float StepSize = 1;
         public float JumpSpeed;

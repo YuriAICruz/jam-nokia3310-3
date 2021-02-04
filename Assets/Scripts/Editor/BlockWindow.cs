@@ -17,45 +17,58 @@ namespace Editor
 
         private PoolSystem.TileType type;
 
-        public List<Vector3Int> positions;
-        public List<string> tiles;
-        private string _currentTile = "Tiles/";
+        public int[] cellSizes;
+        public List<Vector3Int>[] positions;
+        public List<string>[] tiles;
+
         private string _fileName;
-        private int _cellSize;
+        private Array _types;
+        private Bootstrap _bootstrap;
+        
+        private string[] _currentTile;
 
         [MenuItem("Game/Tileset Block")]
         static void Init()
         {
-            // Get existing open window or if none, make a new one:
             _window = (BlockWindow) GetWindow(typeof(BlockWindow));
             _window.Show();
         }
 
-        void OnGUI()
+        private void OnGUI()
         {
+            if (_types == null || cellSizes == null || positions == null || tiles == null)
+            {
+                _bootstrap = FindObjectOfType<Bootstrap>();
+                _types = Enum.GetValues(typeof(PoolSystem.TileType));
+                cellSizes = new int[_types.Length];
+                positions = new List<Vector3Int>[_types.Length];
+                tiles = new List<string>[_types.Length];
+            }
+            if (_currentTile == null)
+            {
+                _currentTile = new string[_types.Length];
+                for (int i = 0; i < _types.Length; i++)
+                {
+                    _currentTile[i] = "Tiles/";
+                }
+            }
+
             type = (PoolSystem.TileType) EditorGUILayout.EnumPopup(type);
 
-            switch (type)
-            {
-                case PoolSystem.TileType.Collider:
-                    ShowGrid("Grid - Colliders");
-                    return;
-                case PoolSystem.TileType.Graphics:
-                    return;
-                case PoolSystem.TileType.Physics:
-                    return;
-            }
-
-            EditorGUILayout.LabelField("Hello");
+            ShowGrid(type);
         }
 
-        private void ShowGrid(string reference)
+        private void ShowGrid(PoolSystem.TileType type)
         {
-            if (positions == null || tiles == null)
+            var typeIndex = (int) type;
+
+            if (positions[typeIndex] == null || tiles[typeIndex] == null)
             {
-                positions = new List<Vector3Int>();
-                tiles = new List<string>();
+                positions[typeIndex] = new List<Vector3Int>();
+                tiles[typeIndex] = new List<string>();
             }
+
+            var reference = $"Grid - {type}";
 
             var go = GameObject.Find(reference);
 
@@ -73,22 +86,24 @@ namespace Editor
                 return;
             }
 
-            _cellSize = (int) grid.cellSize.x;
+            cellSizes[typeIndex] = (int) grid.cellSize.x;
 
             var size = new Vector2Int(84 / (int) grid.cellSize.x + 1, 42 / (int) grid.cellSize.y + 1);
 
             var selectedStyle = new GUIStyle(GUI.skin.button);
             selectedStyle.normal.textColor = new Color(0, 1f, 0.6f);
             selectedStyle.hover.textColor = new Color(1f, 0.2f, 0.2f);
+            selectedStyle.fontSize = 10;
 
             var unSelectedStyle = new GUIStyle(GUI.skin.button);
             unSelectedStyle.normal.textColor = new Color(0.4f, 0.4f, 0.4f);
             unSelectedStyle.hover.textColor = new Color(0.0f, 0.6f, 0.9f);
+            selectedStyle.fontSize = 10;
 
             EditorGUILayout.BeginHorizontal();
-            _currentTile = EditorGUILayout.TextField("Tile Resource", _currentTile);
+            _currentTile[typeIndex] = EditorGUILayout.TextField("Tile Resource", _currentTile[typeIndex]);
 
-            if (_currentTile == null || Resources.Load<TileBase>(_currentTile) == null)
+            if (_currentTile == null || Resources.Load<TileBase>(_currentTile[typeIndex]) == null)
             {
                 EditorGUILayout.LabelField("Null Tile, write a valid Resource Tile");
                 return;
@@ -96,8 +111,8 @@ namespace Editor
 
             if (GUILayout.Button("Reset"))
             {
-                positions = new List<Vector3Int>();
-                tiles = new List<string>();
+                positions[typeIndex] = new List<Vector3Int>();
+                tiles[typeIndex] = new List<string>();
                 _fileName = "";
             }
 
@@ -107,27 +122,27 @@ namespace Editor
             for (int x = -size.x / 2; x <= size.x / 2; x++)
             {
                 EditorGUILayout.BeginVertical();
-                for (int y = size.y / 2; y >= -size.y / 2; y--)
+                for (int y = size.y / 2; y >= -(size.y / 2+1); y--)
                 {
                     var pos = new Vector3Int(x, y, 0);
-                    var selected = positions.Contains(pos);
+                    var selected = positions[typeIndex].Contains(pos);
+                    var index = positions[typeIndex].FindIndex(v => v == pos);
 
-                    if (GUILayout.Button($"{x:00}\n{y:00}", selected ? selectedStyle : unSelectedStyle))
+                    if (GUILayout.Button(selected ? tiles[typeIndex][index].Split('/').Last() : $"{x:00}\n{y:00}",
+                        selected ? selectedStyle : unSelectedStyle, GUILayout.Width(32), GUILayout.Height(32)))
                     {
                         if (selected)
                         {
-                            var index = positions.FindIndex(v => v == pos);
-                            positions.RemoveAt(index);
-                            tiles.RemoveAt(index);
+                            positions[typeIndex].RemoveAt(index);
+                            tiles[typeIndex].RemoveAt(index);
                         }
                         else
                         {
-                            positions.Add(pos);
-                            tiles.Add(_currentTile);
+                            positions[typeIndex].Add(pos);
+                            tiles[typeIndex].Add(_currentTile[typeIndex]);
                         }
                     }
                 }
-
                 EditorGUILayout.EndVertical();
             }
 
@@ -139,25 +154,35 @@ namespace Editor
 
             EditorGUILayout.BeginHorizontal();
 
-            if (!string.IsNullOrEmpty(_fileName))
+            if (!CanSave())
+            {
+                EditorGUILayout.LabelField("Populate all grid types to save");
+            }
+            else if (!string.IsNullOrEmpty(_fileName))
             {
                 var path = Application.dataPath + "/Resources/Blocks/";
                 var file = path + _fileName + ".json";
                 var exists = File.Exists(file);
                 if (GUILayout.Button(exists ? "Override Save" : "Save"))
                 {
-                    for (int i = 0; i < tiles.Count; i++)
+                    for (int i = 0; i < tiles[typeIndex].Count; i++)
                     {
-                        if (string.IsNullOrEmpty(tiles[i]))
+                        if (string.IsNullOrEmpty(tiles[typeIndex][i]))
                         {
-                            positions.RemoveAt(i);
-                            tiles.RemoveAt(i);
+                            positions[typeIndex].RemoveAt(i);
+                            tiles[typeIndex].RemoveAt(i);
                         }
                     }
 
-                    File.WriteAllText(file,
-                        JsonConvert.SerializeObject(new PoolSystem.Block(_cellSize, positions.ToArray(), tiles.ToArray()))
-                    );
+                    var data = new PoolSystem.Block.Data[_types.Length];
+
+                    for (int i = 0; i < data.Length; i++)
+                    {
+                        data[i] = new PoolSystem.Block.Data(cellSizes[i], (PoolSystem.TileType) _types.GetValue(i),
+                            positions[i].ToArray(), tiles[i].ToArray());
+                    }
+
+                    File.WriteAllText(file, JsonConvert.SerializeObject(new PoolSystem.Block(data)));
 
                     AssetDatabase.Refresh();
                 }
@@ -171,16 +196,40 @@ namespace Editor
 
                 var blocks = JsonConvert.DeserializeObject<PoolSystem.Block>(File.ReadAllText(path));
 
-                positions = blocks.positions.ToList();
-                tiles = blocks.tiles.ToList();
+                cellSizes = new int[_types.Length];
+                positions = new List<Vector3Int>[_types.Length];
+                tiles = new List<string>[_types.Length];
+
+                for (int i = 0; i < _types.Length; i++)
+                {
+                    var d = blocks.data.First(x => x.type == (PoolSystem.TileType) _types.GetValue(i));
+                    positions[i] = d.positions.ToList();
+                    tiles[i] = d.tiles.ToList();
+                }
+
+                _fileName = "";
             }
 
             EditorGUILayout.EndHorizontal();
         }
 
+        private bool CanSave()
+        {
+            for (int i = 0; i < _types.Length; i++)
+            {
+                if (positions[i] == null || positions[i].Count == 0)
+                    return false;
+
+                if (tiles[i] == null || tiles[i].Count == 0)
+                    return false;
+            }
+
+            return true;
+        }
+
         private static void NotFound(string reference)
         {
-            EditorGUILayout.LabelField($"Not found {reference}, create a Grid with this name");
+            EditorGUILayout.LabelField($"Not found \"{reference}\", create a Grid with this name");
         }
     }
 }
