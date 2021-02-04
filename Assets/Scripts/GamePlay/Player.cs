@@ -18,9 +18,12 @@ public class Player : MonoBehaviour
     private Vector3 _startPosition;
     public bool grounded;
     private float _lastJump;
+    private float _baseX;
+    private int _noCollisionSteps;
 
     void Awake()
     {
+        _baseX = transform.position.x;
         Instance = this;
         _settings = Bootstrap.Instance.Settings;
         _inputListener = Bootstrap.Instance.inpListener;
@@ -28,6 +31,7 @@ public class Player : MonoBehaviour
 
         _inputListener.GravityChange += ChangeGravity;
         _inputListener.Jump += Jump;
+        _inputListener.CancelJump += CancelJump;
 
         if (physics.Move(transform.position, Vector3Int.zero, out var newPosition))
         {
@@ -40,8 +44,6 @@ public class Player : MonoBehaviour
         _gameSystem = Bootstrap.Instance.GameSystem;
         _gameSystem.GameStatesChange += GameStatesChange;
     }
-
-    
 
 
     private void GameStatesChange(GameSystem.GameStates state, GameSystem.GameStates oldState)
@@ -59,9 +61,11 @@ public class Player : MonoBehaviour
         var pos = _lastPosition =
             new Vector3(x: Mathf.Lerp(_lastPosition.x, _newPosition.x, Time.deltaTime * _settings.TranslationSpeed),
                 Mathf.Lerp(_lastPosition.y, _newPosition.y, Time.deltaTime * _settings.GravitySpeed), 0f);
-        
-        transform.position = physics.SetPosition(pos);     
 
+        transform.position = physics.SetPosition(pos);
+
+        if (transform.position.y <= 1 && transform.position.y >= 1)
+            transform.localScale = new Vector3(1, -_settings.Gravity.y, 1);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -77,53 +81,65 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        var cell = 6;
+        Debug.DrawRay(transform.position + Vector3.left * cell, Vector3.up * 10, Color.red);
         if (physics.Collide(transform.position, out var newPosition))
         {
             _newPosition = newPosition;
+            _noCollisionSteps = 0;
+        }
+        else
+        {
+            _noCollisionSteps++;
+            if (_noCollisionSteps > 5)
+                _newPosition.x += Mathf.Min(_baseX - _newPosition.x,  Time.deltaTime * _settings.ReturnSpeed);
         }
 
-        if (_lastJump<=_settings.JumpDuration)
+        if (_lastJump <= _settings.JumpDuration)
         {
             return;
         }
-        
-        if (physics.Gravity(transform.position,out var gravPosition))
+
+        if (physics.Gravity(transform.position, out var gravPosition) &&
+            physics.Gravity(transform.position + Vector3.left * cell, out var gravPositionb) &&
+            physics.Gravity(transform.position + Vector3.left * cell * 2, out gravPositionb)
+        )
         {
             _newPosition.y = gravPosition.y;
             grounded = false;
         }
         else
         {
-            grounded = true;
+            var dist = physics.GetCellDistance(transform.position);
+
+            if (dist.y < 1)
+                grounded = true;
         }
-        
     }
+
     private void ChangeGravity()
     {
         if (!grounded)
         {
             return;
         }
+
         _settings.InvertGravity();
         grounded = false;
-        StartCoroutine(FlipPlayer());
-        
-    }
-
-    IEnumerator FlipPlayer()
-    {
-        yield return new WaitForSeconds(1);
-        transform.localScale = new Vector3(1,-_settings.Gravity.y,1);
     }
 
     private void Jump()
     {
-        if (grounded&&physics.Move(transform.position,-_settings.Gravity*2,out var jumpPosition))
+        if (grounded && physics.Move(transform.position, -_settings.Gravity * 2, out var jumpPosition))
         {
             _newPosition.y = jumpPosition.y;
             _lastJump = 0f;
             grounded = false;
         }
+    }
+
+    private void CancelJump()
+    {
+        _lastJump = 999f;
     }
 }

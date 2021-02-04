@@ -51,7 +51,7 @@ namespace DefaultNamespace
             var pos = _settings.CollidersMap.WorldToCell(position);
 
             var tl = _settings.CollidersMap.GetTile(pos+ _settings.Gravity);
-            if (tl != null)
+            if (tl)
             {
                 outPosition = position;
                 return false;
@@ -87,6 +87,12 @@ namespace DefaultNamespace
             position.z = Mathf.Round(position.z);
 
             return position;
+        }
+
+        public Vector3 GetCellDistance(Vector3 position)
+        {
+            var pos = _settings.CollidersMap.WorldToCell(position);
+            return (_settings.CollidersMap.GetCellCenterWorld(pos) - position);
         }
     }
 }

@@ -48,13 +48,13 @@ MonoBehaviour:
     CollidersMap: {fileID: 0}
     GraphicsMap: {fileID: 0}
     StepSize: 1
-    JumpHeith: 0
-    JumpDuration: 0.4
-    GravitySpeed: 3
+    ReturnSpeed: 6
+    JumpDuration: 0.5
+    GravitySpeed: 10
     TranslationSpeed: 10
     ScrollSpeed: 5
     MaxScrollSpeed: 24
-    MinScrollSpeed: 8
+    MinScrollSpeed: 12
     ScrollDirection: {x: -1, y: 0, z: 0}
     MenuSong: {fileID: 8300000, guid: 8053c7f8d0b972047a7b292a2a58dae4, type: 3}
     GameplaySong: {fileID: 8300000, guid: 3cacea4d6336ea74da15091ba59f9379, type: 3}

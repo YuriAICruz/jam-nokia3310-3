@@ -11,22 +11,26 @@ public class InputListener : MonoBehaviour
     public event Action<Vector2Int> Navigate;
     public event Action Pause;
     public event Action Accept;
-
+    public event Action CancelJump;
     private void Update()
     {
-        if (Input.GetKeyDown("w"))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Z))
         {
             if (Jump != null) Jump();
             Accept?.Invoke();
         }
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Z))
+        {
+            CancelJump?.Invoke();
+        }
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.Space)  || Input.GetKeyDown(KeyCode.C))
         {
             if (GravityChange != null) GravityChange();
             Accept?.Invoke();
         }
 
-        if (Input.GetKeyDown("f"))
+        if (Input.GetKeyDown(KeyCode.F)  || Input.GetKeyDown(KeyCode.X))
         {
             if (Attack != null) Attack();
             Accept?.Invoke();
