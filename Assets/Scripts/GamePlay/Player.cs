@@ -9,18 +9,25 @@ using Physics = DefaultNamespace.Physics;
 public class Player : MonoBehaviour
 {
     public static Player Instance;
+    private Settings _settings;
+    private InputListener _inputListener;
     public Physics physics;
     private Vector3 _newPosition;
     public float translationSpeed;
     private Vector3 _lastPosition;
     private GameSystem _gameSystem;
     private Vector3 _startPosition;
+    public bool grounded;
 
     void Awake()
     {
         Instance = this;
-
+        _settings = Bootstrap.Instance.Settings;
+        _inputListener = Bootstrap.Instance.inpListener;
         physics = new Physics();
+
+        _inputListener.GravityChange += ChangeGravity;
+        _inputListener.Jump += Jump;
 
         if (physics.Move(transform.position, Vector3Int.zero, out var newPosition))
         {
@@ -33,6 +40,9 @@ public class Player : MonoBehaviour
         _gameSystem = Bootstrap.Instance.GameSystem;
         _gameSystem.GameStatesChange += GameStatesChange;
     }
+
+    
+
 
     private void GameStatesChange(GameSystem.GameStates state, GameSystem.GameStates oldState)
     {
@@ -61,9 +71,40 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         if (physics.Collide(transform.position, out var newPosition))
         {
             _newPosition = newPosition;
         }
+        
+        if (physics.Gravity(transform.position,out var gravPosition))
+        {
+            _newPosition.y = gravPosition.y;
+            grounded = false;
+        }
+        else
+        {
+            grounded = true;
+        }
+
+        if (physics.Jump(transform.position,out var jumpPosition))
+        {
+            _newPosition.y = jumpPosition.y;
+            grounded = false;
+        }
+        else
+        {
+            grounded = true;
+        }
+    }
+    private void ChangeGravity()
+    {
+        _settings.InvertGravity();
+        grounded = false;
+        transform.localScale = new Vector3(1,-_settings.Gravity.y,1);
+    }
+    private void Jump()
+    {
+        grounded = false;
     }
 }
