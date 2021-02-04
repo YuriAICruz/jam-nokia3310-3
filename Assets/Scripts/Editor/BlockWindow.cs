@@ -131,6 +131,24 @@ namespace Editor
                 yTarget += 1;
             }
 
+            EditorGUILayout.BeginHorizontal();
+            _currentTile[typeIndex] = EditorGUILayout.TextField("Tile Resource", _currentTile[typeIndex]);
+
+            if (_currentTile == null || Resources.Load<Tile>(_currentTile[typeIndex]) == null)
+            {
+                EditorGUILayout.LabelField("Null Tile, write a valid Resource Tile");
+                return;
+            }
+
+            if (GUILayout.Button("Reset"))
+            {
+                positions[typeIndex] = new List<Vector3Int>();
+                tiles[typeIndex] = new List<string>();
+                cellSizes[typeIndex] = -1;
+                _fileName = "";
+            }
+
+            EditorGUILayout.EndHorizontal();
 
             var selectedStyle = new GUIStyle(GUI.skin.button);
             selectedStyle.normal.textColor = new Color(0, 1f, 0.6f);
@@ -146,25 +164,6 @@ namespace Editor
             hasCollider.normal.textColor = new Color(0.8f, 0.5f, 0.4f);
             hasCollider.hover.textColor = new Color(0.0f, 0.9f, 0.5f);
             hasCollider.fontSize = 8;
-
-            EditorGUILayout.BeginHorizontal();
-            _currentTile[typeIndex] = EditorGUILayout.TextField("Tile Resource", _currentTile[typeIndex]);
-
-            if (_currentTile == null || Resources.Load<TileBase>(_currentTile[typeIndex]) == null)
-            {
-                EditorGUILayout.LabelField("Null Tile, write a valid Resource Tile");
-                return;
-            }
-
-            if (GUILayout.Button("Reset"))
-            {
-                positions[typeIndex] = new List<Vector3Int>();
-                tiles[typeIndex] = new List<string>();
-                cellSizes[typeIndex] = -1;
-                _fileName = "";
-            }
-
-            EditorGUILayout.EndHorizontal();
 
             EditorGUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
@@ -192,20 +191,39 @@ namespace Editor
                                          )
                                      );
 
-                    if (GUILayout.Button(selected ? tiles[typeIndex][index].Split('/').Last() : $"{x:00}\n{y:00}",
+                    var text = selected ? "" : $"{x:00}\n{y:00}";
+                    var ctn = new GUIContent(text);
+                    var rect = GUILayoutUtility.GetRect(
+                        ctn,
                         selected ? selectedStyle : onCollider ? hasCollider : unSelectedStyle,
-                        GUILayout.Width(buttonSize.x),
-                        GUILayout.Height(buttonSize.y)))
+                        GUILayout.Width(buttonSize.x), GUILayout.Height(buttonSize.y)
+                    );
+                    var removed = false;
+
+                    if (GUI.Button(rect, text, selected ? selectedStyle : onCollider ? hasCollider : unSelectedStyle))
                     {
                         if (selected)
                         {
                             positions[typeIndex].RemoveAt(index);
                             tiles[typeIndex].RemoveAt(index);
+                            removed = true;
                         }
                         else
                         {
                             positions[typeIndex].Add(pos);
                             tiles[typeIndex].Add(_currentTile[typeIndex]);
+                        }
+                    }
+
+                    if (selected && !removed)
+                    {
+                        var tile = Resources.Load<Tile>(tiles[typeIndex][index]);
+                        var texture = AssetPreview.GetAssetPreview(tile.sprite);
+
+                        if (texture)
+                        {
+                            texture.filterMode = FilterMode.Point;
+                            GUI.DrawTexture(rect, texture);
                         }
                     }
                 }
@@ -259,7 +277,7 @@ namespace Editor
             {
                 string path = EditorUtility.OpenFilePanel("Select File", "", "json");
 
-                if(string.IsNullOrEmpty(path))
+                if (string.IsNullOrEmpty(path))
                     return;
 
                 var blocks = JsonConvert.DeserializeObject<PoolSystem.Block>(File.ReadAllText(path));
@@ -284,7 +302,7 @@ namespace Editor
 
                 for (int i = 0; i < _types.Length; i++)
                 {
-                    ShowGrid((PoolSystem.TileType)_types.GetValue(i));
+                    ShowGrid((PoolSystem.TileType) _types.GetValue(i));
                 }
             }
 
