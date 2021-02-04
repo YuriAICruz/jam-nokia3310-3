@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 254369579}
   - component: {fileID: 254369581}
   - component: {fileID: 254369580}
+  - component: {fileID: 2949433113215798966}
   m_Layer: 0
   m_Name: attackso-com-idle_0
   m_TagString: Untagged
@@ -102,6 +103,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2949433113215798966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254369578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3150a60c9f8e3409c97fa75492c678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirePrefab: {fileID: 5645766676192057364, guid: 478cb7e5eab21e04689ef5e85514ce1d,
+    type: 3}
 --- !u!1 &53043315085214015
 GameObject:
   m_ObjectHideFlags: 0
