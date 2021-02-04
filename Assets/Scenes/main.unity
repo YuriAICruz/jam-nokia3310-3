@@ -1552,7 +1552,7 @@ PrefabInstance:
     - target: {fileID: 4424516189889065993, guid: c4c948d55a513ac4ba8c5a753c9344c9,
         type: 3}
       propertyPath: m_Name
-      value: Grid
+      value: Grid - Graphics
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4c948d55a513ac4ba8c5a753c9344c9, type: 3}
@@ -1695,7 +1695,7 @@ PrefabInstance:
     - target: {fileID: 6498714917837937713, guid: 70521f62116cc844687b19653d60a487,
         type: 3}
       propertyPath: m_Name
-      value: Grid - Colliders
+      value: Grid - Collider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70521f62116cc844687b19653d60a487, type: 3}
@@ -1775,6 +1775,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 254369579, guid: aab678f38f5ccf84991f7031fe8911da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.61
+      objectReference: {fileID: 0}
     - target: {fileID: 8745076097340763952, guid: aab678f38f5ccf84991f7031fe8911da,
         type: 3}
       propertyPath: m_RootOrder
@@ -1834,11 +1838,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8745076097340763967, guid: aab678f38f5ccf84991f7031fe8911da,
-        type: 3}
-      propertyPath: inputDir
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aab678f38f5ccf84991f7031fe8911da, type: 3}
