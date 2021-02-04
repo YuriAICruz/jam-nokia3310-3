@@ -13,8 +13,9 @@ namespace DefaultNamespace
         [Header("Player")] public float StepSize = 1;
         public float JumpHeith;
         public float JumpDuration;
+        public float GravitySpeed;
 
-        [Header("Scroll")] 
+        [Header("Scroll")] public float TranslationSpeed =10;
         public float ScrollSpeed;
         public float MaxScrollSpeed;
         public float MinScrollSpeed;

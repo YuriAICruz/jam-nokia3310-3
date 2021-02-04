@@ -13,11 +13,11 @@ public class Player : MonoBehaviour
     private InputListener _inputListener;
     public Physics physics;
     private Vector3 _newPosition;
-    public float translationSpeed;
     private Vector3 _lastPosition;
     private GameSystem _gameSystem;
     private Vector3 _startPosition;
     public bool grounded;
+    private float _lastJump;
 
     void Awake()
     {
@@ -54,8 +54,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        var pos = _lastPosition = Vector3.Lerp(_lastPosition, _newPosition, Time.deltaTime * translationSpeed);
-        transform.position = physics.SetPosition(pos);
+        _lastJump += Time.deltaTime;
+
+        var pos = _lastPosition =
+            new Vector3(x: Mathf.Lerp(_lastPosition.x, _newPosition.x, Time.deltaTime * _settings.TranslationSpeed),
+                Mathf.Lerp(_lastPosition.y, _newPosition.y, Time.deltaTime * _settings.GravitySpeed), 0f);
+        
+        transform.position = physics.SetPosition(pos);     
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -76,6 +82,11 @@ public class Player : MonoBehaviour
         {
             _newPosition = newPosition;
         }
+
+        if (_lastJump<=_settings.JumpDuration)
+        {
+            return;
+        }
         
         if (physics.Gravity(transform.position,out var gravPosition))
         {
@@ -86,25 +97,33 @@ public class Player : MonoBehaviour
         {
             grounded = true;
         }
-
-        if (physics.Jump(transform.position,out var jumpPosition))
-        {
-            _newPosition.y = jumpPosition.y;
-            grounded = false;
-        }
-        else
-        {
-            grounded = true;
-        }
+        
     }
     private void ChangeGravity()
     {
+        if (!grounded)
+        {
+            return;
+        }
         _settings.InvertGravity();
         grounded = false;
+        StartCoroutine(FlipPlayer());
+        
+    }
+
+    IEnumerator FlipPlayer()
+    {
+        yield return new WaitForSeconds(1);
         transform.localScale = new Vector3(1,-_settings.Gravity.y,1);
     }
+
     private void Jump()
     {
-        grounded = false;
+        if (grounded&&physics.Move(transform.position,-_settings.Gravity*2,out var jumpPosition))
+        {
+            _newPosition.y = jumpPosition.y;
+            _lastJump = 0f;
+            grounded = false;
+        }
     }
 }

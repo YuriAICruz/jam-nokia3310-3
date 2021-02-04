@@ -60,20 +60,7 @@ namespace DefaultNamespace
             outPosition = _settings.CollidersMap.GetCellCenterWorld(pos + _settings.Gravity);;
             return true;
         }
-
-        public bool Jump(Vector3 position, out Vector3 outPosition)
-        {
-            var pos = _settings.CollidersMap.WorldToCell(position);
-            
-                var tl = _settings.CollidersMap.GetTile(pos + _settings.Gravity * -1);
-                if (tl != null)
-                {
-                    outPosition = position;
-                    return false;
-                }
-                outPosition = _settings.CollidersMap.GetCellCenterWorld(pos + _settings.Gravity* (int) -_settings.JumpHeith);
-                return true;
-        }
+        
 
         public bool Move(Vector3 position, Vector3Int dir, out Vector3 outPosition)
         {
