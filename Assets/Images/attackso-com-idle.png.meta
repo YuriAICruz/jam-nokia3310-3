@@ -159,12 +159,12 @@ TextureImporter:
       name: attackso-com-idle_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 5
         y: 0
-        width: 12
-        height: 11
-      alignment: 9
-      pivot: {x: 0.44864607, y: 0.21288548}
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -180,12 +180,12 @@ TextureImporter:
       name: attackso-com-idle_1
       rect:
         serializedVersion: 2
-        x: 12
+        x: 15
         y: 0
-        width: 12
-        height: 11
-      alignment: 9
-      pivot: {x: 0.45506525, y: 0.2198883}
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -201,12 +201,12 @@ TextureImporter:
       name: attackso-com-idle_2
       rect:
         serializedVersion: 2
-        x: 24
+        x: 27
         y: 0
-        width: 12
-        height: 11
-      alignment: 9
-      pivot: {x: 0.46148443, y: 0.2198883}
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -222,12 +222,12 @@ TextureImporter:
       name: attackso-com-idle_3
       rect:
         serializedVersion: 2
-        x: 36
+        x: 39
         y: 0
-        width: 12
-        height: 11
-      alignment: 9
-      pivot: {x: 0.46148458, y: 0.23389389}
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -243,12 +243,12 @@ TextureImporter:
       name: attackso-com-idle_4
       rect:
         serializedVersion: 2
-        x: 48
+        x: 52
         y: 0
-        width: 12
-        height: 11
-      alignment: 9
-      pivot: {x: 0.45506477, y: 0.24089669}
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -264,12 +264,12 @@ TextureImporter:
       name: attackso-com-idle_5
       rect:
         serializedVersion: 2
-        x: 60
+        x: 63
         y: 0
-        width: 12
-        height: 11
-      alignment: 9
-      pivot: {x: 0.46148428, y: 0.22689109}
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -285,12 +285,12 @@ TextureImporter:
       name: attackso-com-idle_6
       rect:
         serializedVersion: 2
-        x: 72
+        x: 75
         y: 0
-        width: 12
-        height: 11
-      alignment: 9
-      pivot: {x: 0.4614849, y: 0.22689109}
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -306,12 +306,12 @@ TextureImporter:
       name: attackso-com-idle_7
       rect:
         serializedVersion: 2
-        x: 84
+        x: 87
         y: 0
-        width: 12
-        height: 11
-      alignment: 9
-      pivot: {x: 0.46148428, y: 0.22689109}
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -327,12 +327,12 @@ TextureImporter:
       name: attackso-com-idle_8
       rect:
         serializedVersion: 2
-        x: 96
+        x: 99
         y: 0
-        width: 12
-        height: 11
-      alignment: 9
-      pivot: {x: 0.46148428, y: 0.2198883}
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -348,12 +348,12 @@ TextureImporter:
       name: attackso-com-idle_9
       rect:
         serializedVersion: 2
-        x: 108
+        x: 112
         y: 0
-        width: 12
-        height: 11
-      alignment: 9
-      pivot: {x: 0.46148428, y: 0.2198883}
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -369,12 +369,12 @@ TextureImporter:
       name: attackso-com-idle_10
       rect:
         serializedVersion: 2
-        x: 120
+        x: 123
         y: 0
-        width: 12
-        height: 11
-      alignment: 9
-      pivot: {x: 0.46790376, y: 0.21288548}
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

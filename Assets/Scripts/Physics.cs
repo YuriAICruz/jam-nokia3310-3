@@ -5,7 +5,7 @@ namespace DefaultNamespace
     public class Physics
     {
         private Settings _settings;
-
+        
         private Vector3Int[] _dir = new Vector3Int[]
         {
             new Vector3Int(-1, 0, 0),
@@ -14,7 +14,8 @@ namespace DefaultNamespace
             new Vector3Int(1, -1, 0),
             new Vector3Int(0, 0, 0),
         };
-
+        
+ 
         public Physics()
         {
             _settings = Bootstrap.Instance.Settings;
@@ -49,14 +50,29 @@ namespace DefaultNamespace
         {
             var pos = _settings.CollidersMap.WorldToCell(position);
 
-            var tl = _settings.CollidersMap.GetTile(pos);
-            if (tl == null)
+            var tl = _settings.CollidersMap.GetTile(pos+ _settings.Gravity);
+            if (tl != null)
             {
                 outPosition = position;
                 return false;
             }
 
+            outPosition = _settings.CollidersMap.GetCellCenterWorld(pos + _settings.Gravity);;
             return true;
+        }
+
+        public bool Jump(Vector3 position, out Vector3 outPosition)
+        {
+            var pos = _settings.CollidersMap.WorldToCell(position);
+            
+                var tl = _settings.CollidersMap.GetTile(pos + _settings.Gravity * -1);
+                if (tl != null)
+                {
+                    outPosition = position;
+                    return false;
+                }
+                outPosition = _settings.CollidersMap.GetCellCenterWorld(pos + _settings.Gravity* (int) -_settings.JumpHeith);
+                return true;
         }
 
         public bool Move(Vector3 position, Vector3Int dir, out Vector3 outPosition)

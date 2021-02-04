@@ -11,7 +11,7 @@ namespace DefaultNamespace
         public Tilemap GraphicsMap;
 
         [Header("Player")] public float StepSize = 1;
-        public float JumpSpeed;
+        public float JumpHeith;
         public float JumpDuration;
 
         [Header("Scroll")] 
@@ -22,5 +22,12 @@ namespace DefaultNamespace
 
         [Header("Music")] public AudioClip MenuSong;
         public AudioClip GameplaySong;
+        
+        public Vector3Int Gravity = new Vector3Int(0,-1,0);
+
+        public void InvertGravity()
+        {
+            Gravity *= -1;
+        }
     }
 }

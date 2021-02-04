@@ -6,11 +6,16 @@ using UnityEngine;
 public class InputListener : MonoBehaviour
 {
     public delegate void JumpAct(); 
-    public static event JumpAct Jump;
+    public  event JumpAct Jump;
     public delegate void GravChange(); 
-    public static event GravChange GravityChange;
+    public  event GravChange GravityChange;
     public delegate void AttAct(); 
-    public static event AttAct Attack;
+    public  event AttAct Attack;
+
+    private void Awake()
+    {
+        
+    }
 
     private void Update()
     {
