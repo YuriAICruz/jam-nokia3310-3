@@ -13,10 +13,17 @@ namespace DefaultNamespace.UI
         public Button credts;
         public Button exitCred;
 
+        private Button _current;
+
         private GameSystem _system;
+        private InputListener _inputs;
 
         private void Start()
         {
+            _inputs = Bootstrap.Instance.inpListener;
+            _inputs.Pause += Pause;
+            _inputs.Navigate += Navigate;
+            
             StartGame.onClick.AddListener(Play);
             credts.onClick.AddListener(OpenCredts);
             exitCred.onClick.AddListener(CloseCredts);
@@ -27,6 +34,16 @@ namespace DefaultNamespace.UI
             
             SetMenuWindow(true);
             SetCreditsWindow(false);
+        }
+
+        private void Navigate(Vector2Int direction)
+        {
+            
+        }
+
+        private void Pause()
+        {
+            
         }
 
         private void Update()

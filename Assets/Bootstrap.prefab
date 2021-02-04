@@ -48,14 +48,17 @@ MonoBehaviour:
     CollidersMap: {fileID: 0}
     GraphicsMap: {fileID: 0}
     StepSize: 1
-    JumpSpeed: 0.1
-    JumpDuration: 0.1
+    JumpHeith: 0
+    JumpDuration: 0.4
+    GravitySpeed: 3
+    TranslationSpeed: 10
     ScrollSpeed: 5
     MaxScrollSpeed: 24
     MinScrollSpeed: 8
     ScrollDirection: {x: -1, y: 0, z: 0}
     MenuSong: {fileID: 8300000, guid: 8053c7f8d0b972047a7b292a2a58dae4, type: 3}
     GameplaySong: {fileID: 8300000, guid: 3cacea4d6336ea74da15091ba59f9379, type: 3}
+    Gravity: {x: 0, y: -1, z: 0}
   blocks:
   - data:
     - cellSize: 6
@@ -394,9 +397,6 @@ MonoBehaviour:
       - {x: 5, y: 7, z: 0}
       - {x: 9, y: 7, z: 0}
       - {x: 8, y: 7, z: 0}
-      - {x: 5, y: 4, z: 0}
-      - {x: 5, y: 5, z: 0}
-      - {x: 5, y: 6, z: 0}
       - {x: -3, y: -8, z: 0}
       - {x: 2, y: -8, z: 0}
       - {x: 3, y: 7, z: 0}
@@ -421,9 +421,12 @@ MonoBehaviour:
       - {x: 8, y: 4, z: 0}
       - {x: 8, y: 5, z: 0}
       - {x: 8, y: 6, z: 0}
-      - {x: 9, y: 4, z: 0}
-      - {x: 9, y: 5, z: 0}
+      - {x: 5, y: 6, z: 0}
+      - {x: 5, y: 5, z: 0}
+      - {x: 5, y: 4, z: 0}
       - {x: 9, y: 6, z: 0}
+      - {x: 9, y: 5, z: 0}
+      - {x: 9, y: 4, z: 0}
       tiles:
       - Tiles/Pixel
       - Tiles/Pixel
@@ -477,9 +480,6 @@ MonoBehaviour:
       - Tiles/Pixel
       - Tiles/Pixel
       - Tiles/Pixel
-      - Tiles/BlockA
-      - Tiles/BlockA
-      - Tiles/BlockA
       - Tiles/Pixel
       - Tiles/Pixel
       - Tiles/Pixel
@@ -504,6 +504,9 @@ MonoBehaviour:
       - Tiles/BlockB
       - Tiles/BlockB
       - Tiles/BlockB
-      - Tiles/BlockA
-      - Tiles/BlockA
-      - Tiles/BlockA
+      - Tiles/BlockC
+      - Tiles/BlockC
+      - Tiles/BlockC
+      - Tiles/BlockC
+      - Tiles/BlockC
+      - Tiles/BlockC
