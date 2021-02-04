@@ -132,6 +132,13 @@ namespace Editor
             }
 
             EditorGUILayout.BeginHorizontal();
+
+            if (_currentTile.Length <= typeIndex)
+            {
+                NotFound("Index Out of Range");
+                return;
+            }
+            
             _currentTile[typeIndex] = EditorGUILayout.TextField("Tile Resource", _currentTile[typeIndex]);
 
             if (_currentTile == null || Resources.Load<Tile>(_currentTile[typeIndex]) == null)

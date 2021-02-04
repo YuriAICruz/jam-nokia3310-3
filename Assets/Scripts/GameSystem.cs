@@ -40,11 +40,17 @@ namespace DefaultNamespace
                         StartGame();
                         break;
                     case GameStates.GameOver:
+                        GameOver();
                         break;
                 }
 
                 GameStatesChange?.Invoke(_state, old);
             }
+        }
+
+        private void GameOver()
+        {
+            _bgm.Play(BgmSystem.Music.Pause);
         }
 
         public GameSystem(BgmSystem bgm, PoolSystem poolSystem, Settings settings)

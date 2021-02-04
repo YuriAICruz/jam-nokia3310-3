@@ -33,7 +33,6 @@ public class InputListener : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F)  || Input.GetKeyDown(KeyCode.X))
         {
             if (Attack != null) Attack();
-            Accept?.Invoke();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))

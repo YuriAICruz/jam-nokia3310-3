@@ -10,34 +10,36 @@ public class AttackPug : MonoBehaviour
     private GameObject shot;
     private Player _player;
     private InputListener _inputListener;
-    private Animator _animator;
+    public Animator animator;
     public GameObject FirePrefab;
+    public float animationTime;
+    private bool _executing;
 
     // Start is called before the first frame update
     void Start()
     {
         _inputListener = Bootstrap.Instance.inpListener;
         _player = FindObjectOfType<Player>();
-        _animator = GetComponent<Animator>();
         _inputListener.Attack += Attack;
     }
 
     private void Attack()
     {
-        _animator.SetBool("attak", true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        if (_executing) return;
         
+        _executing = true;
+
+        animator.SetLayerWeight(2, 1);
+        animator.SetLayerWeight(1, 0);
+
+        Fire();
     }
 
     public void Fire()
     {
         if (!_fistTime)
         {
-           shot = Instantiate(FirePrefab,transform.position, quaternion.identity);
+            shot = Instantiate(FirePrefab, transform.position, quaternion.identity);
             _fistTime = true;
         }
 
@@ -47,6 +49,13 @@ public class AttackPug : MonoBehaviour
             shot.SetActive(true);
         }
 
-        _animator.SetBool("attak", false);
+        Invoke(nameof(ResetAnimator), animationTime);
+    }
+
+    void ResetAnimator()
+    {
+        animator.SetLayerWeight(2, 0);
+        animator.SetLayerWeight(1, 1);
+        _executing = false;
     }
 }
