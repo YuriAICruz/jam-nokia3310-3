@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if(_gameSystem.State != GameSystem.GameStates.GameStart) return;
         _lastJump += GameTime.deltaTime;
 
         if (!grounded && !_jumping)
@@ -86,7 +87,15 @@ public class Player : MonoBehaviour
         if (transform.position.y <= 1 && transform.position.y >= 1)
             transform.localScale = new Vector3(1, -_settings.Gravity.y, 1);
 
-        if (_gameSystem.State == GameSystem.GameStates.GameStart && transform.position.x < _settings.deathPosition)
+        CheckDeath();
+    }
+
+    private void CheckDeath()
+    {
+        if (transform.position.x < _settings.deathPosition.x)
+            _gameSystem.PlayerDied();
+        
+        if (Mathf.Abs(transform.position.y) > _settings.deathPosition.y)
             _gameSystem.PlayerDied();
     }
 
@@ -103,6 +112,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(_gameSystem.State != GameSystem.GameStates.GameStart) return;
+        
         _cell = 6;
 
         if (physics.Collide(transform.position, out var newPosition))
