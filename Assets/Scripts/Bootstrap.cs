@@ -26,7 +26,10 @@ namespace DefaultNamespace
         }
 
         private static Bootstrap _instance;
+        
+        [HideInInspector]
         public InputListener inpListener;
+        
         public PoolSystem PoolSystem;
         public GameSystem GameSystem;
         public BgmSystem BgmSystem;

@@ -5,12 +5,10 @@ using UnityEngine;
 
 public class InputListener : MonoBehaviour
 {
-    public delegate void JumpAct(); 
-    public static event JumpAct Jump;
-    public delegate void GravChange(); 
-    public static event GravChange GravityChange;
-    public delegate void AttAct(); 
-    public static event AttAct Attack;
+    public static event Action Jump;
+    public static event Action GravityChange; 
+    public static event Action Attack;
+    public static event Action<Vector2Int> Navigate;
 
     private void Update()
     {
@@ -27,6 +25,23 @@ public class InputListener : MonoBehaviour
         if (Input.GetKeyDown("f"))
         {
             if (Attack != null) Attack();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            
         }
     }
 }
