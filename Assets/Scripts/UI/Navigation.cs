@@ -1,9 +1,7 @@
 ﻿using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
-using Button = UnityEngine.UI.Button;
+using UnityEngine.UI;
 
 namespace DefaultNamespace.UI
 {
