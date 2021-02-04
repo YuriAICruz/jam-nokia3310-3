@@ -10,22 +10,26 @@ public class InputListener : MonoBehaviour
     public event Action Attack;
     public event Action<Vector2Int> Navigate;
     public event Action Pause;
+    public event Action Accept;
 
     private void Update()
     {
         if (Input.GetKeyDown("w"))
         {
             if (Jump != null) Jump();
+            Accept?.Invoke();
         }
 
         if (Input.GetKeyDown("space"))
         {
             if (GravityChange != null) GravityChange();
+            Accept?.Invoke();
         }
 
         if (Input.GetKeyDown("f"))
         {
             if (Attack != null) Attack();
+            Accept?.Invoke();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))

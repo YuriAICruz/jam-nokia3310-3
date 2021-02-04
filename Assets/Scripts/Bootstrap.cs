@@ -35,7 +35,7 @@ namespace DefaultNamespace
         public BgmSystem BgmSystem;
         public ScoreManager ScoreManager = new ScoreManager();
         public Settings Settings;
-        
+        public GameTime GameTime;
         
         [Space]
         public PoolSystem.Block[] blocks;
@@ -47,8 +47,19 @@ namespace DefaultNamespace
 
             inpListener = FindObjectOfType<InputListener>();
             BgmSystem = new BgmSystem();
+            GameTime = new GameTime();
             PoolSystem = new PoolSystem(Settings, blocks);
             GameSystem = new GameSystem(BgmSystem, PoolSystem, Settings);
+        }
+
+        private void Update()
+        {
+            GameTime.Update();
+        }
+
+        private void FixedUpdate()
+        {
+            GameTime.FixedUpdate();
         }
     }
 }
