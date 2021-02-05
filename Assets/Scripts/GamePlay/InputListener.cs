@@ -14,13 +14,13 @@ public class InputListener : MonoBehaviour
     public event Action CancelJump;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Z)||Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (Jump != null) Jump();
             Accept?.Invoke();
         }
         
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Z))
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Z)||Input.GetKeyUp(KeyCode.UpArrow))
         {
             CancelJump?.Invoke();
         }
@@ -40,19 +40,19 @@ public class InputListener : MonoBehaviour
             Pause?.Invoke();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow)||Input.GetKeyDown(KeyCode.A))
         {
             Navigate?.Invoke(Vector2Int.left);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow)||Input.GetKeyDown(KeyCode.D))
         {
             Navigate?.Invoke(Vector2Int.right);
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow)||Input.GetKeyDown(KeyCode.W))
         {
             Navigate?.Invoke(Vector2Int.up);
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow)||Input.GetKeyDown(KeyCode.S))
         {
             Navigate?.Invoke(Vector2Int.down);
         }

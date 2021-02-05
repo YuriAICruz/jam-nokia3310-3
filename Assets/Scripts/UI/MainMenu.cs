@@ -106,6 +106,7 @@ namespace DefaultNamespace.UI
                 case GameSystem.GameStates.Menu:
                     SetMenuWindow(true);
                     SetCreditsWindow(false);
+                    SetGameOverWindow(false);
                     break;
                 case GameSystem.GameStates.GameStart:
                     SetMenuWindow(false);
