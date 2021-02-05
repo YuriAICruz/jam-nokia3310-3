@@ -21,22 +21,16 @@ public class Fire : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (_physics.Move(transform.position, Vector3Int.right, out var newPosition))
-        {
-            transform.position = new Vector3(transform.position.x +
-                                             Mathf.Min(Mathf.Abs(newPosition.x),
-                                                 GameTime.deltaTime * _settings.ScrollSpeed * -2) *
-                                             Mathf.Sign(newPosition.x), transform.position.y, 0);
-        }
-        else
+        if (transform.position.x > 50||_physics.Collide(transform.position,  out var newPosition))
         {
             gameObject.SetActive(false);
         }
-        // transform.position += -_settings.ScrollDirection * (Time.deltaTime * _settings.ScrollSpeed*2);
-        // if (transform.position.x > 50)
-        // {
-        //     gameObject.SetActive(false);
-        // }
+        else
+        {
+            var _position = transform.position;
+            _position += -_settings.ScrollDirection * (GameTime.deltaTime * _settings.ScrollSpeed*2);
+            transform.position = _physics.SetPosition(_position);
+        }
     }
 
     
