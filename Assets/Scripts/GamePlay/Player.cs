@@ -99,17 +99,6 @@ public class Player : MonoBehaviour
             _gameSystem.PlayerDied();
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        GameStop();
-    }
-
-    private void GameStop()
-    {
-        Bootstrap.Instance.GameSystem.State = GameSystem.GameStates.GameOver;
-        Bootstrap.Instance.ScoreManager.CheckHigScore();
-    }
-
     private void FixedUpdate()
     {
         if(_gameSystem.State != GameSystem.GameStates.GameStart) return;
