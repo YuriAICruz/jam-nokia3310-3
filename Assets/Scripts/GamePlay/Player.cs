@@ -84,8 +84,9 @@ public class Player : MonoBehaviour
 
         transform.position = physics.SetPosition(pos);
 
-        if (transform.position.y <= 1 && transform.position.y >= 1)
-            transform.localScale = new Vector3(1, -_settings.Gravity.y, 1);
+        transform.localScale = new Vector3(1, -_settings.Gravity.y, 1);
+        // if (transform.position.y <= 1 && transform.position.y >= 1)
+        //     transform.localScale = new Vector3(1, -_settings.Gravity.y, 1);
 
         CheckDeath();
     }
