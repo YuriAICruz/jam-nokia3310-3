@@ -520,11 +520,6 @@ PrefabInstance:
       objectReference: {fileID: 1661083001}
     - target: {fileID: 96620842992500320, guid: 582f83d5dbfc78d47b0dc3dab29328f2,
         type: 3}
-      propertyPath: Settings.ReturnSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 96620842992500320, guid: 582f83d5dbfc78d47b0dc3dab29328f2,
-        type: 3}
       propertyPath: Settings.CollidersMap
       value: 
       objectReference: {fileID: 112177638}
