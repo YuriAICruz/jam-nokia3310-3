@@ -1,4 +1,5 @@
 ﻿using System;
+using DefaultNamespace.GamePlay;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +30,10 @@ namespace DefaultNamespace
         
         [HideInInspector]
         public InputListener inpListener;
+        [HideInInspector]
+        public Player Player;
+        [HideInInspector]
+        public Mover Mover;
         
         public PoolSystem PoolSystem;
         public GameSystem GameSystem;
@@ -46,9 +51,12 @@ namespace DefaultNamespace
                 _instance = this;
 
             inpListener = FindObjectOfType<InputListener>();
+            Player = FindObjectOfType<Player>();
+            Mover = FindObjectOfType<Mover>();
+            
             BgmSystem = new BgmSystem();
             GameTime = new GameTime();
-            PoolSystem = new PoolSystem(Settings, blocks);
+            PoolSystem = new PoolSystem(Settings, blocks, Player, Mover);
             GameSystem = new GameSystem(BgmSystem, PoolSystem, Settings);
         }
 
@@ -56,6 +64,7 @@ namespace DefaultNamespace
         {
             GameTime.Update();
             GameSystem.Update();
+            PoolSystem.Update();
         }
 
         private void FixedUpdate()
