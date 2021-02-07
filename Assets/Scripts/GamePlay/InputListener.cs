@@ -30,10 +30,10 @@ public class InputListener : MonoBehaviour
             if (GravityChange != null) GravityChange();
         }
 
-        if (Input.GetKeyDown(KeyCode.F)  || Input.GetKeyDown(KeyCode.X))
-        {
-            if (Attack != null) Attack();
-        }
+        // if (Input.GetKeyDown(KeyCode.F)  || Input.GetKeyDown(KeyCode.X))
+        // {
+        //     if (Attack != null) Attack();
+        // }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

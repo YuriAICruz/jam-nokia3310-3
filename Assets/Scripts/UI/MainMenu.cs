@@ -25,6 +25,8 @@ namespace DefaultNamespace.UI
         public Button Restart;
         public Button ToMenu;
 
+        public Text ScoreText;
+        
         Navigation _currentPanel;
 
         private GameSystem _system;
@@ -95,6 +97,8 @@ namespace DefaultNamespace.UI
         private void SetGameOverWindow(bool value)
         {
             GameOver.Object.SetActive(value);
+            var score = (int)_system.PlayTime;
+            ScoreText.text = score.ToString("");
             if (value)
                 UpdateNavigation(GameOver.Navigation);
         }

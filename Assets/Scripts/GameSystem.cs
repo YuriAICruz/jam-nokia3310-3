@@ -23,6 +23,7 @@ namespace DefaultNamespace
 
         private GameStates _state = GameStates.Menu;
         private float _gameStart;
+        public int PlayTime;
 
         public GameStates State
         {
@@ -80,6 +81,7 @@ namespace DefaultNamespace
 
         public void PlayerDied()
         {
+            
             State = GameStates.GameOver;
         }
 
