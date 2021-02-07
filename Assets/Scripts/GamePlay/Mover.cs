@@ -27,7 +27,7 @@ namespace DefaultNamespace.GamePlay
         {
             if (state == GameSystem.GameStates.GameStart)
             {
-                _position = transform.position = _startPosition;
+                Reset();
             }
         }
 
@@ -35,6 +35,19 @@ namespace DefaultNamespace.GamePlay
         {
             _position += _settings.ScrollDirection * (GameTime.deltaTime * _settings.ScrollSpeed);
             transform.position = _physics.SetPosition(_position);
+        }
+
+        public void Reset(float offsset = 0)
+        {
+            if (offsset == 0)
+            {
+                _position = transform.position = _startPosition;
+                return;
+            }
+            
+            _position  = _startPosition;
+            _position += Vector3.right * offsset;
+            transform.position = _position;
         }
     }
 }

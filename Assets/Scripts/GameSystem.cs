@@ -73,7 +73,7 @@ namespace DefaultNamespace
             _gameStart = GameTime.time;
             _bgm.Play(BgmSystem.Music.Gameplay);
 
-            _poolSystem.Reset();
+            _poolSystem.Initiate();
 
             _settings.ScrollSpeed = _settings.MinScrollSpeed;
         }

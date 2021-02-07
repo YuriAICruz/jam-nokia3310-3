@@ -7,7 +7,9 @@ namespace DefaultNamespace
     [Serializable]
     public class Settings
     {
-        [Header("Tilemaps")] public Tilemap CollidersMap;
+        [Header("Tilemaps")] 
+        public int ScreenCollidersCellSize;
+        public Tilemap CollidersMap;
         public Tilemap GraphicsMap;
 
         [Header("Player")] public float StepSize = 1;
@@ -31,6 +33,7 @@ namespace DefaultNamespace
         
         [Header("Death")]
         public Vector2Int deathPosition = new Vector2Int(-14, 8);
+
 
         public void InvertGravity()
         {

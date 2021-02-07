@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     private float _gravityVelocity;
     private int _cell;
 
-    void Awake()
+    private void Awake()
     {
         Instance = this;
         _settings = Bootstrap.Instance.Settings;
@@ -59,9 +59,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
-        if(_gameSystem.State != GameSystem.GameStates.GameStart) return;
+        if (_gameSystem.State != GameSystem.GameStates.GameStart) return;
         _lastJump += GameTime.deltaTime;
 
         if (!grounded && !_jumping)
@@ -73,12 +73,12 @@ public class Player : MonoBehaviour
         var dir = -_lastPosition + _newPosition;
         var pos = _lastPosition =
             new Vector3(
-                _lastPosition.x + Mathf.Min(Mathf.Abs(dir.x), GameTime.deltaTime * _settings.ScrollSpeed*2) *
+                _lastPosition.x + Mathf.Min(Mathf.Abs(dir.x), GameTime.deltaTime * _settings.ScrollSpeed * 2) *
                 Mathf.Sign(dir.x),
                 _lastPosition.y + Mathf.Min(
                     Mathf.Abs(dir.y),
                     _jumping ? GameTime.deltaTime * _settings.JumpSpeed : _gravityVelocity
-                )* Mathf.Sign(dir.y),
+                ) * Mathf.Sign(dir.y),
                 0f
             );
 
@@ -95,20 +95,27 @@ public class Player : MonoBehaviour
     {
         if (transform.position.x < _settings.deathPosition.x)
             _gameSystem.PlayerDied();
-        
+
         if (Mathf.Abs(transform.position.y) > _settings.deathPosition.y)
             _gameSystem.PlayerDied();
     }
 
     private void FixedUpdate()
     {
-        if(_gameSystem.State != GameSystem.GameStates.GameStart) return;
-        
+        if (_gameSystem.State != GameSystem.GameStates.GameStart) return;
+
         _cell = 6;
 
         if (physics.Collide(transform.position, out var newPosition))
         {
+            var y = _newPosition.y;
             _newPosition = newPosition;
+
+            if (_jumping)
+            {
+                _newPosition.y = y;
+            }
+
             _noCollisionSteps = 0;
         }
         else
@@ -155,9 +162,9 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if(!grounded || _gameSystem.State != GameSystem.GameStates.GameStart) return;
-        
-        if (physics.Move(transform.position - Vector3.right*_cell, -_settings.Gravity * 2, out var jumpPosition))
+        if (!grounded || _gameSystem.State != GameSystem.GameStates.GameStart) return;
+
+        if (physics.Move(transform.position - Vector3.right * _cell * 2, -_settings.Gravity * 2, out var jumpPosition))
         {
             _newPosition.y = jumpPosition.y;
             _lastJump = 0f;
@@ -165,7 +172,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            int i;
+            //_newPosition.y += -_settings.Gravity.y * 2 * _cell;
         }
     }
 
