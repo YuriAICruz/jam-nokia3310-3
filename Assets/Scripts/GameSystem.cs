@@ -23,6 +23,7 @@ namespace DefaultNamespace
 
         private GameStates _state = GameStates.Menu;
         private float _gameStart;
+        public float PlayTime;
 
         public GameStates State
         {
@@ -72,6 +73,7 @@ namespace DefaultNamespace
         {
             _gameStart = GameTime.time;
             _bgm.Play(BgmSystem.Music.Gameplay);
+            PlayTime = 0;
 
             _poolSystem.Initiate();
 
@@ -80,12 +82,18 @@ namespace DefaultNamespace
 
         public void PlayerDied()
         {
+            
             State = GameStates.GameOver;
+            
         }
 
         public void Update()
         {
             _settings.ScrollSpeed += Math.Min(_settings.MaxScrollSpeed - _settings.ScrollSpeed, GameTime.deltaTime * _settings.Acceleration);
+            if (State== GameStates.GameStart)
+            {
+                PlayTime += Time.deltaTime;
+            }
         }
     }
 }

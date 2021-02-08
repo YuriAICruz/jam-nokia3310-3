@@ -25,6 +25,8 @@ namespace DefaultNamespace.UI
         public Button Restart;
         public Button ToMenu;
 
+        public Text ScoreText;
+        
         Navigation _currentPanel;
 
         private GameSystem _system;
@@ -114,6 +116,7 @@ namespace DefaultNamespace.UI
                     break;
                 case GameSystem.GameStates.GameOver:
                     SetGameOverWindow(true);
+                    ScoreText.text = _system.PlayTime.ToString("00");
                     break;
                 case GameSystem.GameStates.Credits:
                     SetMenuWindow(false);
