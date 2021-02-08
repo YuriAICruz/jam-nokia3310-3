@@ -43,7 +43,7 @@ pipeline{
             }
             steps {
                 bat '''
-                    %Butler% push Builds/StandaloneWindows64/ graphene-ai/nokia3310:windows-beta
+                    %Butler% push Builds/StandaloneWindows64/ graphene-ai/pugrun:windows-beta
                 '''
             }
         }
@@ -71,7 +71,7 @@ pipeline{
             }
             steps {
                 bat '''
-                    %Butler% push Builds/StandaloneOSX/ graphene-ai/nokia3310:osx-beta
+                    %Butler% push Builds/StandaloneOSX/ graphene-ai/pugrun:osx-beta
                 '''
             }
         }
@@ -105,7 +105,7 @@ pipeline{
             }
             steps {
                 bat '''
-                    %Butler% push Builds/WebGL/jam-nokia3310-3_Web/ graphene-ai/nokia3310:'web-beta'
+                    %Butler% push Builds/WebGL/jam-nokia3310-3_Web/ graphene-ai/pugrun:'web-beta'
                 '''
             }
         }

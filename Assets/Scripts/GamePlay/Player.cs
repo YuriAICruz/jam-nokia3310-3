@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         if (_gameSystem.State != GameSystem.GameStates.GameStart) return;
+
         _lastJump += GameTime.deltaTime;
 
         if (!grounded && !_jumping)
@@ -73,12 +74,11 @@ public class Player : MonoBehaviour
         var dir = -_lastPosition + _newPosition;
         var pos = _lastPosition =
             new Vector3(
-                _lastPosition.x + Mathf.Min(Mathf.Abs(dir.x), GameTime.deltaTime * _settings.ScrollSpeed * 2) *
-                Mathf.Sign(dir.x),
+                _lastPosition.x + Mathf.Min(
+                    Mathf.Abs(dir.x), GameTime.deltaTime * _settings.ScrollSpeed * 2) * Mathf.Sign(dir.x),
                 _lastPosition.y + Mathf.Min(
-                    Mathf.Abs(dir.y),
-                    _jumping ? GameTime.deltaTime * _settings.JumpSpeed : _gravityVelocity
-                ) * Mathf.Sign(dir.y),
+                    Mathf.Abs(dir.y), _jumping ? GameTime.deltaTime * _settings.JumpSpeed : _gravityVelocity) *
+                Mathf.Sign(dir.y),
                 0f
             );
 
@@ -144,7 +144,7 @@ public class Player : MonoBehaviour
         {
             var dist = physics.GetCellDistance(transform.position);
 
-            if (Mathf.Abs(dist.y) < 1)
+            if (Mathf.Abs(dist.y) < 2)
                 grounded = true;
         }
     }

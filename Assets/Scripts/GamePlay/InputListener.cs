@@ -37,7 +37,7 @@ public class InputListener : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Pause?.Invoke();
+            //Pause?.Invoke();
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow)||Input.GetKeyDown(KeyCode.A))
