@@ -1,0 +1,2412 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &96620842992500327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96620842992500321}
+  - component: {fileID: 96620842992500320}
+  m_Layer: 0
+  m_Name: Bootstrap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &96620842992500321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96620842992500327}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.824625, y: 5.596158, z: -7.7197385}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &96620842992500320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96620842992500327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 600f5153f5a540bb9758db95cd084f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inpListener: {fileID: 0}
+  Player: {fileID: 0}
+  Mover: {fileID: 0}
+  Settings:
+    ScreenCollidersCellSize: 15
+    CollidersMap: {fileID: 0}
+    GraphicsMap: {fileID: 0}
+    StepSize: 1
+    ReturnSpeed: 6
+    JumpSpeed: 80
+    TranslationSpeed: 10
+    JumpDuration: 0.32
+    GravitySpeed: 20
+    ScrollSpeed: 5
+    MaxScrollSpeed: 32
+    MinScrollSpeed: 18
+    ScrollDirection: {x: -1, y: 0, z: 0}
+    Acceleration: 1
+    MenuSong: {fileID: 8300000, guid: 8053c7f8d0b972047a7b292a2a58dae4, type: 3}
+    GameplaySong: {fileID: 8300000, guid: 3cacea4d6336ea74da15091ba59f9379, type: 3}
+    Gravity: {x: 0, y: -1, z: 0}
+    deathPosition: {x: -46, y: 42}
+  blocks:
+  - data:
+    - cellSize: 6
+      type: 0
+      positions:
+      - {x: -7, y: 4, z: 0}
+      - {x: -6, y: 4, z: 0}
+      - {x: -5, y: 4, z: 0}
+      - {x: -4, y: 4, z: 0}
+      - {x: -3, y: 4, z: 0}
+      - {x: -2, y: 4, z: 0}
+      - {x: -1, y: 4, z: 0}
+      - {x: 0, y: 4, z: 0}
+      - {x: 1, y: 4, z: 0}
+      - {x: 2, y: 4, z: 0}
+      - {x: 3, y: 4, z: 0}
+      - {x: 4, y: 4, z: 0}
+      - {x: 5, y: 4, z: 0}
+      - {x: 6, y: 4, z: 0}
+      - {x: 7, y: 4, z: 0}
+      - {x: 7, y: -4, z: 0}
+      - {x: 6, y: -4, z: 0}
+      - {x: 5, y: -4, z: 0}
+      - {x: 4, y: -4, z: 0}
+      - {x: 3, y: -4, z: 0}
+      - {x: 2, y: -4, z: 0}
+      - {x: 1, y: -4, z: 0}
+      - {x: 0, y: -4, z: 0}
+      - {x: -1, y: -4, z: 0}
+      - {x: -2, y: -4, z: 0}
+      - {x: -3, y: -4, z: 0}
+      - {x: -4, y: -4, z: 0}
+      - {x: -5, y: -4, z: 0}
+      - {x: -6, y: -4, z: 0}
+      - {x: -7, y: -4, z: 0}
+      - {x: -1, y: -3, z: 0}
+      - {x: 0, y: -3, z: 0}
+      tiles:
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+    - cellSize: 3
+      type: 1
+      positions:
+      - {x: -14, y: 7, z: 0}
+      - {x: -13, y: 7, z: 0}
+      - {x: -11, y: 7, z: 0}
+      - {x: -12, y: 7, z: 0}
+      - {x: -10, y: 7, z: 0}
+      - {x: -9, y: 7, z: 0}
+      - {x: -8, y: 7, z: 0}
+      - {x: -7, y: 7, z: 0}
+      - {x: -6, y: 7, z: 0}
+      - {x: -5, y: 7, z: 0}
+      - {x: -4, y: 7, z: 0}
+      - {x: -3, y: 7, z: 0}
+      - {x: -2, y: 7, z: 0}
+      - {x: 0, y: 7, z: 0}
+      - {x: -1, y: 7, z: 0}
+      - {x: 1, y: 7, z: 0}
+      - {x: 2, y: 7, z: 0}
+      - {x: 3, y: 7, z: 0}
+      - {x: 4, y: 7, z: 0}
+      - {x: 5, y: 7, z: 0}
+      - {x: 6, y: 7, z: 0}
+      - {x: 7, y: 7, z: 0}
+      - {x: 8, y: 7, z: 0}
+      - {x: 9, y: 7, z: 0}
+      - {x: 10, y: 7, z: 0}
+      - {x: 11, y: 7, z: 0}
+      - {x: 12, y: 7, z: 0}
+      - {x: 13, y: 7, z: 0}
+      - {x: 14, y: 7, z: 0}
+      - {x: -14, y: -8, z: 0}
+      - {x: -12, y: -8, z: 0}
+      - {x: -13, y: -8, z: 0}
+      - {x: -11, y: -8, z: 0}
+      - {x: -10, y: -8, z: 0}
+      - {x: -9, y: -8, z: 0}
+      - {x: -8, y: -8, z: 0}
+      - {x: -7, y: -8, z: 0}
+      - {x: -6, y: -8, z: 0}
+      - {x: -5, y: -8, z: 0}
+      - {x: -4, y: -8, z: 0}
+      - {x: -3, y: -8, z: 0}
+      - {x: -2, y: -8, z: 0}
+      - {x: -1, y: -8, z: 0}
+      - {x: 0, y: -8, z: 0}
+      - {x: 1, y: -8, z: 0}
+      - {x: 2, y: -8, z: 0}
+      - {x: 3, y: -8, z: 0}
+      - {x: 4, y: -8, z: 0}
+      - {x: 5, y: -8, z: 0}
+      - {x: 6, y: -8, z: 0}
+      - {x: 7, y: -8, z: 0}
+      - {x: 8, y: -8, z: 0}
+      - {x: 9, y: -8, z: 0}
+      - {x: 10, y: -8, z: 0}
+      - {x: 11, y: -8, z: 0}
+      - {x: 12, y: -8, z: 0}
+      - {x: 13, y: -8, z: 0}
+      - {x: 14, y: -8, z: 0}
+      - {x: -1, y: -7, z: 0}
+      - {x: 0, y: -7, z: 0}
+      - {x: -2, y: -7, z: 0}
+      - {x: -2, y: -6, z: 0}
+      - {x: -1, y: -6, z: 0}
+      - {x: 0, y: -6, z: 0}
+      - {x: 1, y: -6, z: 0}
+      - {x: 1, y: -7, z: 0}
+      tiles:
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/BlockA
+      - Tiles/BlockA
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+  - data:
+    - cellSize: 6
+      type: 0
+      positions:
+      - {x: -7, y: 4, z: 0}
+      - {x: -6, y: 4, z: 0}
+      - {x: -5, y: 4, z: 0}
+      - {x: -4, y: 4, z: 0}
+      - {x: -3, y: 4, z: 0}
+      - {x: -2, y: 4, z: 0}
+      - {x: -1, y: 4, z: 0}
+      - {x: 0, y: 4, z: 0}
+      - {x: 1, y: 4, z: 0}
+      - {x: 2, y: 4, z: 0}
+      - {x: 3, y: 4, z: 0}
+      - {x: 4, y: 4, z: 0}
+      - {x: 5, y: 4, z: 0}
+      - {x: 6, y: 4, z: 0}
+      - {x: 7, y: 4, z: 0}
+      - {x: 7, y: -4, z: 0}
+      - {x: 6, y: -4, z: 0}
+      - {x: 5, y: -4, z: 0}
+      - {x: 4, y: -4, z: 0}
+      - {x: 3, y: -4, z: 0}
+      - {x: 2, y: -4, z: 0}
+      - {x: 1, y: -4, z: 0}
+      - {x: 0, y: -4, z: 0}
+      - {x: -1, y: -4, z: 0}
+      - {x: -2, y: -4, z: 0}
+      - {x: -3, y: -4, z: 0}
+      - {x: -4, y: -4, z: 0}
+      - {x: -5, y: -4, z: 0}
+      - {x: -6, y: -4, z: 0}
+      - {x: -7, y: -4, z: 0}
+      - {x: -1, y: -3, z: 0}
+      - {x: 0, y: -3, z: 0}
+      - {x: 4, y: 3, z: 0}
+      - {x: 4, y: 2, z: 0}
+      - {x: 2, y: 3, z: 0}
+      - {x: 2, y: 2, z: 0}
+      tiles:
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+    - cellSize: 3
+      type: 1
+      positions:
+      - {x: -14, y: 7, z: 0}
+      - {x: -13, y: 7, z: 0}
+      - {x: -11, y: 7, z: 0}
+      - {x: -12, y: 7, z: 0}
+      - {x: -10, y: 7, z: 0}
+      - {x: -9, y: 7, z: 0}
+      - {x: -8, y: 7, z: 0}
+      - {x: -7, y: 7, z: 0}
+      - {x: -6, y: 7, z: 0}
+      - {x: -5, y: 7, z: 0}
+      - {x: -4, y: 7, z: 0}
+      - {x: -3, y: 7, z: 0}
+      - {x: -2, y: 7, z: 0}
+      - {x: 0, y: 7, z: 0}
+      - {x: -1, y: 7, z: 0}
+      - {x: 1, y: 7, z: 0}
+      - {x: 4, y: 7, z: 0}
+      - {x: 11, y: 7, z: 0}
+      - {x: 12, y: 7, z: 0}
+      - {x: 13, y: 7, z: 0}
+      - {x: 14, y: 7, z: 0}
+      - {x: -14, y: -8, z: 0}
+      - {x: -12, y: -8, z: 0}
+      - {x: -13, y: -8, z: 0}
+      - {x: -11, y: -8, z: 0}
+      - {x: -10, y: -8, z: 0}
+      - {x: -9, y: -8, z: 0}
+      - {x: -8, y: -8, z: 0}
+      - {x: -7, y: -8, z: 0}
+      - {x: -6, y: -8, z: 0}
+      - {x: -5, y: -8, z: 0}
+      - {x: -2, y: -8, z: 0}
+      - {x: -1, y: -8, z: 0}
+      - {x: 0, y: -8, z: 0}
+      - {x: 3, y: -8, z: 0}
+      - {x: 4, y: -8, z: 0}
+      - {x: 5, y: -8, z: 0}
+      - {x: 6, y: -8, z: 0}
+      - {x: 7, y: -8, z: 0}
+      - {x: 8, y: -8, z: 0}
+      - {x: 9, y: -8, z: 0}
+      - {x: 10, y: -8, z: 0}
+      - {x: 11, y: -8, z: 0}
+      - {x: 12, y: -8, z: 0}
+      - {x: 13, y: -8, z: 0}
+      - {x: 14, y: -8, z: 0}
+      - {x: -4, y: -8, z: 0}
+      - {x: 1, y: -8, z: 0}
+      - {x: 2, y: 7, z: 0}
+      - {x: 5, y: 7, z: 0}
+      - {x: 9, y: 7, z: 0}
+      - {x: 8, y: 7, z: 0}
+      - {x: -3, y: -8, z: 0}
+      - {x: 2, y: -8, z: 0}
+      - {x: 3, y: 7, z: 0}
+      - {x: 6, y: 7, z: 0}
+      - {x: 7, y: 7, z: 0}
+      - {x: 10, y: 7, z: 0}
+      - {x: -2, y: -7, z: 0}
+      - {x: -1, y: -7, z: 0}
+      - {x: 0, y: -7, z: 0}
+      - {x: 1, y: -7, z: 0}
+      - {x: 1, y: -6, z: 0}
+      - {x: 0, y: -6, z: 0}
+      - {x: -1, y: -6, z: 0}
+      - {x: -2, y: -6, z: 0}
+      - {x: 4, y: 3, z: 0}
+      - {x: 4, y: 4, z: 0}
+      - {x: 4, y: 5, z: 0}
+      - {x: 4, y: 6, z: 0}
+      - {x: 5, y: 3, z: 0}
+      - {x: 9, y: 3, z: 0}
+      - {x: 8, y: 3, z: 0}
+      - {x: 8, y: 4, z: 0}
+      - {x: 8, y: 5, z: 0}
+      - {x: 8, y: 6, z: 0}
+      - {x: 5, y: 6, z: 0}
+      - {x: 5, y: 5, z: 0}
+      - {x: 5, y: 4, z: 0}
+      - {x: 9, y: 6, z: 0}
+      - {x: 9, y: 5, z: 0}
+      - {x: 9, y: 4, z: 0}
+      tiles:
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockB
+      - Tiles/BlockC
+      - Tiles/BlockC
+      - Tiles/BlockC
+      - Tiles/BlockC
+      - Tiles/BlockC
+      - Tiles/BlockC
+  - data:
+    - cellSize: 6
+      type: 0
+      positions:
+      - {x: -7, y: 4, z: 0}
+      - {x: -6, y: 4, z: 0}
+      - {x: -5, y: 4, z: 0}
+      - {x: -4, y: 4, z: 0}
+      - {x: -3, y: 4, z: 0}
+      - {x: 3, y: 4, z: 0}
+      - {x: 4, y: 4, z: 0}
+      - {x: 5, y: 4, z: 0}
+      - {x: 6, y: 4, z: 0}
+      - {x: 7, y: 4, z: 0}
+      - {x: 7, y: -4, z: 0}
+      - {x: 6, y: -4, z: 0}
+      - {x: 5, y: -4, z: 0}
+      - {x: 4, y: -4, z: 0}
+      - {x: -4, y: -4, z: 0}
+      - {x: -5, y: -4, z: 0}
+      - {x: -6, y: -4, z: 0}
+      - {x: -7, y: -4, z: 0}
+      - {x: -3, y: -1, z: 0}
+      - {x: -2, y: -1, z: 0}
+      - {x: -1, y: -1, z: 0}
+      - {x: 0, y: -1, z: 0}
+      - {x: 1, y: -1, z: 0}
+      - {x: 2, y: -1, z: 0}
+      - {x: 3, y: -1, z: 0}
+      - {x: -4, y: -1, z: 0}
+      - {x: -4, y: 0, z: 0}
+      - {x: 4, y: -1, z: 0}
+      - {x: 4, y: 0, z: 0}
+      tiles:
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+    - cellSize: 3
+      type: 1
+      positions:
+      - {x: -14, y: 7, z: 0}
+      - {x: -13, y: 7, z: 0}
+      - {x: -11, y: 7, z: 0}
+      - {x: -12, y: 7, z: 0}
+      - {x: -10, y: 7, z: 0}
+      - {x: -9, y: 7, z: 0}
+      - {x: -8, y: 7, z: 0}
+      - {x: -7, y: 7, z: 0}
+      - {x: -6, y: 7, z: 0}
+      - {x: 7, y: 7, z: 0}
+      - {x: 8, y: 7, z: 0}
+      - {x: 9, y: 7, z: 0}
+      - {x: 10, y: 7, z: 0}
+      - {x: 11, y: 7, z: 0}
+      - {x: 12, y: 7, z: 0}
+      - {x: 13, y: 7, z: 0}
+      - {x: 14, y: 7, z: 0}
+      - {x: -14, y: -8, z: 0}
+      - {x: -12, y: -8, z: 0}
+      - {x: -13, y: -8, z: 0}
+      - {x: -11, y: -8, z: 0}
+      - {x: -10, y: -8, z: 0}
+      - {x: -9, y: -8, z: 0}
+      - {x: 9, y: -8, z: 0}
+      - {x: 10, y: -8, z: 0}
+      - {x: 11, y: -8, z: 0}
+      - {x: 12, y: -8, z: 0}
+      - {x: 13, y: -8, z: 0}
+      - {x: 14, y: -8, z: 0}
+      - {x: -8, y: -2, z: 0}
+      - {x: -8, y: -1, z: 0}
+      - {x: 9, y: -1, z: 0}
+      - {x: 9, y: -2, z: 0}
+      - {x: -8, y: 0, z: 0}
+      - {x: -7, y: 0, z: 0}
+      - {x: -8, y: -3, z: 0}
+      - {x: -7, y: -3, z: 0}
+      - {x: -6, y: -3, z: 0}
+      - {x: -5, y: -3, z: 0}
+      - {x: -4, y: -3, z: 0}
+      - {x: -3, y: -3, z: 0}
+      - {x: -2, y: -3, z: 0}
+      - {x: 0, y: -3, z: 0}
+      - {x: -1, y: -3, z: 0}
+      - {x: 1, y: -3, z: 0}
+      - {x: 2, y: -3, z: 0}
+      - {x: 3, y: -3, z: 0}
+      - {x: 4, y: -3, z: 0}
+      - {x: 5, y: -3, z: 0}
+      - {x: 6, y: -3, z: 0}
+      - {x: 7, y: -3, z: 0}
+      - {x: 9, y: -3, z: 0}
+      - {x: 8, y: -2, z: 0}
+      - {x: 8, y: -3, z: 0}
+      - {x: 9, y: 0, z: 0}
+      - {x: 8, y: 0, z: 0}
+      - {x: 8, y: -1, z: 0}
+      - {x: -7, y: -1, z: 0}
+      - {x: -7, y: -2, z: 0}
+      - {x: -6, y: -2, z: 0}
+      - {x: -5, y: -2, z: 0}
+      - {x: -4, y: -2, z: 0}
+      - {x: -3, y: -2, z: 0}
+      - {x: -2, y: -2, z: 0}
+      - {x: -1, y: -2, z: 0}
+      - {x: 0, y: -2, z: 0}
+      - {x: 1, y: -2, z: 0}
+      - {x: 2, y: -2, z: 0}
+      - {x: 3, y: -2, z: 0}
+      - {x: 4, y: -2, z: 0}
+      - {x: 5, y: -2, z: 0}
+      - {x: 6, y: -2, z: 0}
+      - {x: 7, y: -2, z: 0}
+      - {x: -5, y: 7, z: 0}
+      - {x: 6, y: 7, z: 0}
+      - {x: 8, y: -8, z: 0}
+      - {x: -7, y: -8, z: 0}
+      - {x: -8, y: -8, z: 0}
+      tiles:
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/BlockC
+      - Tiles/BlockC
+      - Tiles/BlockC
+      - Tiles/BlockC
+      - Tiles/Blockb
+      - Tiles/Blockb
+      - Tiles/Blockb
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blockb
+      - Tiles/Blockb
+      - Tiles/Blockb
+      - Tiles/Blockb
+      - Tiles/Blockb
+      - Tiles/Blockb
+      - Tiles/Blockb
+      - Tiles/Blockb
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/Blocka
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+  - data:
+    - cellSize: 6
+      type: 0
+      positions:
+      - {x: -7, y: 4, z: 0}
+      - {x: -6, y: 4, z: 0}
+      - {x: -5, y: 4, z: 0}
+      - {x: -4, y: 4, z: 0}
+      - {x: 2, y: 4, z: 0}
+      - {x: 3, y: 4, z: 0}
+      - {x: 4, y: 4, z: 0}
+      - {x: -3, y: -4, z: 0}
+      - {x: -4, y: -4, z: 0}
+      - {x: -5, y: -4, z: 0}
+      - {x: -7, y: -4, z: 0}
+      - {x: -6, y: -4, z: 0}
+      - {x: -2, y: -3, z: 0}
+      - {x: -2, y: -4, z: 0}
+      - {x: -1, y: -4, z: 0}
+      - {x: 0, y: -4, z: 0}
+      - {x: 0, y: -3, z: 0}
+      - {x: 0, y: -2, z: 0}
+      - {x: -1, y: -2, z: 0}
+      - {x: -1, y: -3, z: 0}
+      - {x: -3, y: -3, z: 0}
+      - {x: 1, y: -1, z: 0}
+      - {x: 2, y: -1, z: 0}
+      - {x: 2, y: -2, z: 0}
+      - {x: 1, y: -2, z: 0}
+      - {x: 1, y: -3, z: 0}
+      - {x: 2, y: -3, z: 0}
+      - {x: 3, y: -3, z: 0}
+      - {x: 3, y: -4, z: 0}
+      - {x: 2, y: -4, z: 0}
+      - {x: 1, y: -4, z: 0}
+      - {x: 4, y: -4, z: 0}
+      - {x: 5, y: -4, z: 0}
+      - {x: 6, y: -4, z: 0}
+      - {x: 6, y: -3, z: 0}
+      - {x: 7, y: -3, z: 0}
+      - {x: 7, y: -4, z: 0}
+      - {x: 5, y: 4, z: 0}
+      - {x: 6, y: 4, z: 0}
+      - {x: 3, y: 0, z: 0}
+      - {x: 3, y: -1, z: 0}
+      - {x: 3, y: -2, z: 0}
+      - {x: 4, y: -1, z: 0}
+      - {x: 4, y: -2, z: 0}
+      - {x: 5, y: -2, z: 0}
+      - {x: 5, y: -3, z: 0}
+      - {x: 4, y: -3, z: 0}
+      - {x: 4, y: 0, z: 0}
+      - {x: 5, y: 0, z: 0}
+      - {x: 5, y: -1, z: 0}
+      - {x: 6, y: -1, z: 0}
+      - {x: 6, y: -2, z: 0}
+      tiles:
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+    - cellSize: 3
+      type: 1
+      positions:
+      - {x: 13, y: 7, z: 0}
+      - {x: 12, y: 7, z: 0}
+      - {x: 11, y: 7, z: 0}
+      - {x: 10, y: 7, z: 0}
+      - {x: 9, y: 7, z: 0}
+      - {x: 8, y: 7, z: 0}
+      - {x: 7, y: 7, z: 0}
+      - {x: 6, y: 7, z: 0}
+      - {x: 5, y: 7, z: 0}
+      - {x: 4, y: 7, z: 0}
+      - {x: -7, y: 7, z: 0}
+      - {x: -8, y: 7, z: 0}
+      - {x: -9, y: 7, z: 0}
+      - {x: -10, y: 7, z: 0}
+      - {x: -11, y: 7, z: 0}
+      - {x: -12, y: 7, z: 0}
+      - {x: -13, y: 7, z: 0}
+      - {x: -14, y: 7, z: 0}
+      - {x: 6, y: 0, z: 0}
+      - {x: 7, y: 0, z: 0}
+      - {x: 7, y: -1, z: 0}
+      - {x: 6, y: -1, z: 0}
+      - {x: 3, y: -2, z: 0}
+      - {x: 4, y: -2, z: 0}
+      - {x: 2, y: -2, z: 0}
+      - {x: 5, y: -2, z: 0}
+      - {x: 6, y: -2, z: 0}
+      - {x: 7, y: -2, z: 0}
+      - {x: 8, y: -2, z: 0}
+      - {x: 9, y: -2, z: 0}
+      - {x: 8, y: -3, z: 0}
+      - {x: 7, y: -3, z: 0}
+      - {x: 6, y: -3, z: 0}
+      - {x: 5, y: -3, z: 0}
+      - {x: 4, y: -3, z: 0}
+      - {x: 3, y: -3, z: 0}
+      - {x: 2, y: -3, z: 0}
+      - {x: 9, y: -3, z: 0}
+      - {x: 9, y: -4, z: 0}
+      - {x: 11, y: -4, z: 0}
+      - {x: 10, y: -4, z: 0}
+      - {x: 10, y: -5, z: 0}
+      - {x: 11, y: -5, z: 0}
+      - {x: 12, y: -6, z: 0}
+      - {x: 13, y: -6, z: 0}
+      - {x: 14, y: -6, z: 0}
+      - {x: 14, y: -7, z: 0}
+      - {x: 14, y: -8, z: 0}
+      - {x: 13, y: -8, z: 0}
+      - {x: 13, y: -7, z: 0}
+      - {x: 12, y: -7, z: 0}
+      - {x: 12, y: -8, z: 0}
+      - {x: 11, y: -8, z: 0}
+      - {x: 11, y: -7, z: 0}
+      - {x: 11, y: -6, z: 0}
+      - {x: 10, y: -6, z: 0}
+      - {x: 10, y: -7, z: 0}
+      - {x: 10, y: -8, z: 0}
+      - {x: 9, y: -8, z: 0}
+      - {x: 9, y: -6, z: 0}
+      - {x: 9, y: -5, z: 0}
+      - {x: 8, y: -4, z: 0}
+      - {x: 8, y: -6, z: 0}
+      - {x: 9, y: -7, z: 0}
+      - {x: 8, y: -5, z: 0}
+      - {x: 8, y: -7, z: 0}
+      - {x: 8, y: -8, z: 0}
+      - {x: 7, y: -6, z: 0}
+      - {x: 7, y: -5, z: 0}
+      - {x: 7, y: -4, z: 0}
+      - {x: 7, y: -8, z: 0}
+      - {x: 6, y: -8, z: 0}
+      - {x: 7, y: -7, z: 0}
+      - {x: 6, y: -7, z: 0}
+      - {x: 6, y: -6, z: 0}
+      - {x: 6, y: -5, z: 0}
+      - {x: 5, y: -4, z: 0}
+      - {x: 5, y: -5, z: 0}
+      - {x: 6, y: -4, z: 0}
+      - {x: 5, y: -6, z: 0}
+      - {x: 5, y: -7, z: 0}
+      - {x: 5, y: -8, z: 0}
+      - {x: 4, y: -8, z: 0}
+      - {x: 4, y: -6, z: 0}
+      - {x: 4, y: -5, z: 0}
+      - {x: 4, y: -4, z: 0}
+      - {x: 4, y: -7, z: 0}
+      - {x: 3, y: -4, z: 0}
+      - {x: 3, y: -6, z: 0}
+      - {x: 3, y: -5, z: 0}
+      - {x: 3, y: -7, z: 0}
+      - {x: 3, y: -8, z: 0}
+      - {x: 2, y: -8, z: 0}
+      - {x: 2, y: -7, z: 0}
+      - {x: 2, y: -5, z: 0}
+      - {x: 2, y: -6, z: 0}
+      - {x: 1, y: -4, z: 0}
+      - {x: 1, y: -5, z: 0}
+      - {x: 1, y: -6, z: 0}
+      - {x: 2, y: -4, z: 0}
+      - {x: 1, y: -7, z: 0}
+      - {x: 1, y: -8, z: 0}
+      - {x: 0, y: -8, z: 0}
+      - {x: 0, y: -7, z: 0}
+      - {x: 0, y: -6, z: 0}
+      - {x: 0, y: -4, z: 0}
+      - {x: -1, y: -4, z: 0}
+      - {x: 0, y: -5, z: 0}
+      - {x: -1, y: -6, z: 0}
+      - {x: -1, y: -5, z: 0}
+      - {x: -1, y: -7, z: 0}
+      - {x: -1, y: -8, z: 0}
+      - {x: -2, y: -8, z: 0}
+      - {x: -2, y: -6, z: 0}
+      - {x: -2, y: -5, z: 0}
+      - {x: -2, y: -4, z: 0}
+      - {x: -2, y: -7, z: 0}
+      - {x: -3, y: -6, z: 0}
+      - {x: -3, y: -7, z: 0}
+      - {x: -3, y: -8, z: 0}
+      - {x: -4, y: -6, z: 0}
+      - {x: -4, y: -7, z: 0}
+      - {x: -4, y: -8, z: 0}
+      - {x: -5, y: -8, z: 0}
+      - {x: -5, y: -6, z: 0}
+      - {x: -6, y: -7, z: 0}
+      - {x: -6, y: -6, z: 0}
+      - {x: -5, y: -7, z: 0}
+      - {x: -6, y: -8, z: 0}
+      - {x: -7, y: -8, z: 0}
+      - {x: -8, y: -8, z: 0}
+      - {x: -9, y: -8, z: 0}
+      - {x: -10, y: -8, z: 0}
+      - {x: -11, y: -8, z: 0}
+      - {x: -12, y: -8, z: 0}
+      - {x: -13, y: -8, z: 0}
+      - {x: -14, y: -8, z: 0}
+      - {x: 8, y: 0, z: 0}
+      - {x: 8, y: -1, z: 0}
+      - {x: 9, y: 0, z: 0}
+      - {x: 9, y: -1, z: 0}
+      - {x: 10, y: 0, z: 0}
+      - {x: 11, y: -1, z: 0}
+      - {x: 11, y: 0, z: 0}
+      - {x: 10, y: -2, z: 0}
+      - {x: 10, y: -1, z: 0}
+      - {x: 11, y: -2, z: 0}
+      - {x: 10, y: -3, z: 0}
+      - {x: 11, y: -3, z: 0}
+      - {x: 12, y: -2, z: 0}
+      - {x: 12, y: -3, z: 0}
+      - {x: 13, y: -2, z: 0}
+      - {x: 13, y: -3, z: 0}
+      - {x: 13, y: -4, z: 0}
+      - {x: 13, y: -5, z: 0}
+      - {x: 12, y: -5, z: 0}
+      - {x: 12, y: -4, z: 0}
+      tiles:
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+  - data:
+    - cellSize: 6
+      type: 0
+      positions:
+      - {x: -7, y: 4, z: 0}
+      - {x: 7, y: -4, z: 0}
+      - {x: -7, y: -4, z: 0}
+      - {x: -6, y: 4, z: 0}
+      - {x: -5, y: 4, z: 0}
+      - {x: -4, y: 4, z: 0}
+      - {x: -3, y: 4, z: 0}
+      - {x: 3, y: 4, z: 0}
+      - {x: 4, y: 4, z: 0}
+      - {x: 5, y: 4, z: 0}
+      - {x: 6, y: 4, z: 0}
+      - {x: 7, y: 4, z: 0}
+      - {x: 1, y: -4, z: 0}
+      - {x: 0, y: -4, z: 0}
+      - {x: -1, y: -4, z: 0}
+      - {x: -2, y: -4, z: 0}
+      - {x: 2, y: -4, z: 0}
+      tiles:
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+    - cellSize: 3
+      type: 1
+      positions:
+      - {x: 13, y: 7, z: 0}
+      - {x: 12, y: 7, z: 0}
+      - {x: -14, y: 7, z: 0}
+      - {x: 14, y: 7, z: 0}
+      - {x: -14, y: -8, z: 0}
+      - {x: -13, y: -8, z: 0}
+      - {x: -13, y: 7, z: 0}
+      - {x: -12, y: 7, z: 0}
+      - {x: -11, y: 7, z: 0}
+      - {x: -10, y: 7, z: 0}
+      - {x: -9, y: 7, z: 0}
+      - {x: -8, y: 7, z: 0}
+      - {x: -7, y: 7, z: 0}
+      - {x: -6, y: 7, z: 0}
+      - {x: -5, y: 7, z: 0}
+      - {x: 6, y: 7, z: 0}
+      - {x: 7, y: 7, z: 0}
+      - {x: 8, y: 7, z: 0}
+      - {x: 9, y: 7, z: 0}
+      - {x: 11, y: 7, z: 0}
+      - {x: -4, y: -8, z: 0}
+      - {x: -3, y: -8, z: 0}
+      - {x: -2, y: -8, z: 0}
+      - {x: -1, y: -8, z: 0}
+      - {x: 0, y: -8, z: 0}
+      - {x: 1, y: -8, z: 0}
+      - {x: 2, y: -8, z: 0}
+      - {x: 3, y: -8, z: 0}
+      - {x: 4, y: -8, z: 0}
+      - {x: 5, y: -8, z: 0}
+      - {x: 14, y: -8, z: 0}
+      - {x: 10, y: 7, z: 0}
+      tiles:
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+  - data:
+    - cellSize: 6
+      type: 0
+      positions:
+      - {x: -7, y: 4, z: 0}
+      - {x: -2, y: 4, z: 0}
+      - {x: -1, y: 4, z: 0}
+      - {x: 0, y: 4, z: 0}
+      - {x: 1, y: 4, z: 0}
+      - {x: 6, y: 4, z: 0}
+      - {x: 7, y: 4, z: 0}
+      - {x: 7, y: -4, z: 0}
+      - {x: 6, y: -4, z: 0}
+      - {x: 5, y: -4, z: 0}
+      - {x: 4, y: -4, z: 0}
+      - {x: 3, y: -4, z: 0}
+      - {x: 2, y: -4, z: 0}
+      - {x: -3, y: -4, z: 0}
+      - {x: -4, y: -4, z: 0}
+      - {x: -5, y: -4, z: 0}
+      - {x: -6, y: -4, z: 0}
+      - {x: -7, y: -4, z: 0}
+      tiles:
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+    - cellSize: 3
+      type: 1
+      positions:
+      - {x: -14, y: -8, z: 0}
+      - {x: -13, y: -8, z: 0}
+      - {x: -12, y: -8, z: 0}
+      - {x: -11, y: -8, z: 0}
+      - {x: -10, y: -8, z: 0}
+      - {x: -9, y: -8, z: 0}
+      - {x: -8, y: -8, z: 0}
+      - {x: -7, y: -8, z: 0}
+      - {x: -6, y: -8, z: 0}
+      - {x: -5, y: -8, z: 0}
+      - {x: 4, y: -8, z: 0}
+      - {x: 5, y: -8, z: 0}
+      - {x: 7, y: -8, z: 0}
+      - {x: 6, y: -8, z: 0}
+      - {x: 8, y: -8, z: 0}
+      - {x: 9, y: -8, z: 0}
+      - {x: 10, y: -8, z: 0}
+      - {x: 11, y: -8, z: 0}
+      - {x: 12, y: -8, z: 0}
+      - {x: 13, y: -8, z: 0}
+      - {x: 13, y: 7, z: 0}
+      - {x: 12, y: 7, z: 0}
+      - {x: 3, y: 7, z: 0}
+      - {x: 1, y: 7, z: 0}
+      - {x: 2, y: 7, z: 0}
+      - {x: 0, y: 7, z: 0}
+      - {x: -1, y: 7, z: 0}
+      - {x: -2, y: 7, z: 0}
+      - {x: -3, y: 7, z: 0}
+      - {x: -4, y: 7, z: 0}
+      - {x: -14, y: 7, z: 0}
+      - {x: -13, y: 7, z: 0}
+      - {x: 14, y: -8, z: 0}
+      - {x: 14, y: 7, z: 0}
+      tiles:
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+  - data:
+    - cellSize: 6
+      type: 0
+      positions:
+      - {x: -7, y: 4, z: 0}
+      - {x: 7, y: -4, z: 0}
+      - {x: -7, y: -4, z: 0}
+      - {x: -6, y: 4, z: 0}
+      - {x: 6, y: 4, z: 0}
+      - {x: 7, y: 4, z: 0}
+      - {x: -6, y: -4, z: 0}
+      - {x: -5, y: -4, z: 0}
+      - {x: -5, y: -3, z: 0}
+      - {x: -4, y: -4, z: 0}
+      - {x: -4, y: -3, z: 0}
+      - {x: -1, y: -3, z: 0}
+      - {x: -1, y: -4, z: 0}
+      - {x: 0, y: -3, z: 0}
+      - {x: 0, y: -4, z: 0}
+      - {x: 3, y: -3, z: 0}
+      - {x: 3, y: -4, z: 0}
+      - {x: 4, y: -4, z: 0}
+      - {x: 4, y: -3, z: 0}
+      tiles:
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+    - cellSize: 3
+      type: 1
+      positions:
+      - {x: 13, y: 7, z: 0}
+      - {x: -14, y: 7, z: 0}
+      - {x: 14, y: 7, z: 0}
+      - {x: -14, y: -8, z: 0}
+      - {x: -13, y: -8, z: 0}
+      - {x: -13, y: 7, z: 0}
+      - {x: -12, y: 7, z: 0}
+      - {x: -1, y: -8, z: 0}
+      - {x: 0, y: -8, z: 0}
+      - {x: 1, y: -8, z: 0}
+      - {x: 14, y: -8, z: 0}
+      - {x: -12, y: -8, z: 0}
+      - {x: -11, y: -8, z: 0}
+      - {x: -10, y: -7, z: 0}
+      - {x: -9, y: -8, z: 0}
+      - {x: -9, y: -7, z: 0}
+      - {x: -9, y: -6, z: 0}
+      - {x: -10, y: -6, z: 0}
+      - {x: -10, y: -8, z: 0}
+      - {x: -8, y: -8, z: 0}
+      - {x: -7, y: -8, z: 0}
+      - {x: -8, y: -7, z: 0}
+      - {x: -8, y: -6, z: 0}
+      - {x: -7, y: -6, z: 0}
+      - {x: -7, y: -7, z: 0}
+      - {x: -2, y: -7, z: 0}
+      - {x: -2, y: -8, z: 0}
+      - {x: -2, y: -6, z: 0}
+      - {x: -1, y: -6, z: 0}
+      - {x: -1, y: -7, z: 0}
+      - {x: 0, y: -7, z: 0}
+      - {x: 0, y: -6, z: 0}
+      - {x: 1, y: -6, z: 0}
+      - {x: 1, y: -7, z: 0}
+      - {x: 6, y: -8, z: 0}
+      - {x: 6, y: -7, z: 0}
+      - {x: 6, y: -6, z: 0}
+      - {x: 7, y: -7, z: 0}
+      - {x: 7, y: -8, z: 0}
+      - {x: 8, y: -7, z: 0}
+      - {x: 7, y: -6, z: 0}
+      - {x: 8, y: -6, z: 0}
+      - {x: 9, y: -6, z: 0}
+      - {x: 9, y: -7, z: 0}
+      - {x: 9, y: -8, z: 0}
+      - {x: 8, y: -8, z: 0}
+      - {x: -11, y: 7, z: 0}
+      - {x: 12, y: 7, z: 0}
+      tiles:
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+      - Tiles/pixel
+  - data:
+    - cellSize: 6
+      type: 0
+      positions:
+      - {x: -7, y: 4, z: 0}
+      - {x: 7, y: -4, z: 0}
+      - {x: -7, y: -4, z: 0}
+      - {x: 1, y: -4, z: 0}
+      - {x: 0, y: -4, z: 0}
+      - {x: -1, y: -4, z: 0}
+      - {x: -2, y: -4, z: 0}
+      - {x: 2, y: -4, z: 0}
+      - {x: -6, y: -4, z: 0}
+      - {x: -5, y: -4, z: 0}
+      - {x: -4, y: -4, z: 0}
+      - {x: -3, y: -4, z: 0}
+      - {x: 3, y: -4, z: 0}
+      - {x: 4, y: -4, z: 0}
+      - {x: 5, y: -4, z: 0}
+      - {x: 6, y: -4, z: 0}
+      - {x: -4, y: -3, z: 0}
+      - {x: -3, y: -3, z: 0}
+      - {x: -2, y: -3, z: 0}
+      - {x: -1, y: -3, z: 0}
+      - {x: -1, y: -2, z: 0}
+      - {x: 0, y: -2, z: 0}
+      - {x: 1, y: -2, z: 0}
+      - {x: 0, y: -3, z: 0}
+      - {x: 1, y: -3, z: 0}
+      - {x: 2, y: -3, z: 0}
+      - {x: 2, y: -2, z: 0}
+      - {x: 2, y: -1, z: 0}
+      - {x: 3, y: -1, z: 0}
+      - {x: 4, y: -1, z: 0}
+      - {x: 4, y: -2, z: 0}
+      - {x: 3, y: -2, z: 0}
+      - {x: 3, y: -3, z: 0}
+      - {x: 4, y: -3, z: 0}
+      - {x: 5, y: -3, z: 0}
+      - {x: 5, y: -2, z: 0}
+      - {x: 5, y: -1, z: 0}
+      - {x: 5, y: 0, z: 0}
+      - {x: 6, y: 0, z: 0}
+      - {x: 7, y: 0, z: 0}
+      - {x: 6, y: -1, z: 0}
+      - {x: 7, y: -1, z: 0}
+      - {x: 7, y: -2, z: 0}
+      - {x: 6, y: -2, z: 0}
+      - {x: 6, y: -3, z: 0}
+      - {x: 7, y: -3, z: 0}
+      tiles:
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+    - cellSize: 3
+      type: 1
+      positions:
+      - {x: -14, y: 7, z: 0}
+      - {x: -14, y: -8, z: 0}
+      - {x: -13, y: -8, z: 0}
+      - {x: -4, y: -8, z: 0}
+      - {x: -3, y: -8, z: 0}
+      - {x: -2, y: -8, z: 0}
+      - {x: -1, y: -8, z: 0}
+      - {x: 0, y: -8, z: 0}
+      - {x: 1, y: -8, z: 0}
+      - {x: 2, y: -8, z: 0}
+      - {x: 3, y: -8, z: 0}
+      - {x: 4, y: -8, z: 0}
+      - {x: 5, y: -8, z: 0}
+      - {x: 14, y: -8, z: 0}
+      - {x: -12, y: -8, z: 0}
+      - {x: -10, y: -8, z: 0}
+      - {x: -11, y: -8, z: 0}
+      - {x: -9, y: -8, z: 0}
+      - {x: -8, y: -8, z: 0}
+      - {x: -7, y: -8, z: 0}
+      - {x: -6, y: -8, z: 0}
+      - {x: -5, y: -8, z: 0}
+      - {x: -6, y: -7, z: 0}
+      - {x: -7, y: -7, z: 0}
+      - {x: -8, y: -7, z: 0}
+      - {x: -8, y: -6, z: 0}
+      - {x: -7, y: -6, z: 0}
+      - {x: -6, y: -6, z: 0}
+      - {x: -5, y: -6, z: 0}
+      - {x: -5, y: -7, z: 0}
+      - {x: -4, y: -7, z: 0}
+      - {x: -4, y: -6, z: 0}
+      - {x: -3, y: -7, z: 0}
+      - {x: -2, y: -7, z: 0}
+      - {x: -3, y: -6, z: 0}
+      - {x: -2, y: -6, z: 0}
+      - {x: -2, y: -5, z: 0}
+      - {x: -2, y: -4, z: 0}
+      - {x: -1, y: -5, z: 0}
+      - {x: -1, y: -6, z: 0}
+      - {x: 0, y: -7, z: 0}
+      - {x: 0, y: -6, z: 0}
+      - {x: 0, y: -5, z: 0}
+      - {x: -1, y: -4, z: 0}
+      - {x: -1, y: -7, z: 0}
+      - {x: 1, y: -7, z: 0}
+      - {x: 2, y: -7, z: 0}
+      - {x: 5, y: -7, z: 0}
+      - {x: 3, y: -7, z: 0}
+      - {x: 1, y: -6, z: 0}
+      - {x: 1, y: -5, z: 0}
+      - {x: 1, y: -4, z: 0}
+      - {x: 0, y: -4, z: 0}
+      - {x: 2, y: -5, z: 0}
+      - {x: 2, y: -6, z: 0}
+      - {x: 2, y: -4, z: 0}
+      - {x: 3, y: -5, z: 0}
+      - {x: 3, y: -6, z: 0}
+      - {x: 4, y: -7, z: 0}
+      - {x: 4, y: -6, z: 0}
+      - {x: 4, y: -5, z: 0}
+      - {x: 3, y: -4, z: 0}
+      - {x: 4, y: -3, z: 0}
+      - {x: 4, y: -2, z: 0}
+      - {x: 5, y: -2, z: 0}
+      - {x: 5, y: -3, z: 0}
+      - {x: 4, y: -4, z: 0}
+      - {x: 5, y: -4, z: 0}
+      - {x: 5, y: -5, z: 0}
+      - {x: 5, y: -6, z: 0}
+      - {x: 6, y: -8, z: 0}
+      - {x: 6, y: -7, z: 0}
+      - {x: 6, y: -5, z: 0}
+      - {x: 6, y: -4, z: 0}
+      - {x: 6, y: -3, z: 0}
+      - {x: 6, y: -2, z: 0}
+      - {x: 6, y: -6, z: 0}
+      - {x: 7, y: -8, z: 0}
+      - {x: 8, y: -8, z: 0}
+      - {x: 9, y: -8, z: 0}
+      - {x: 10, y: -8, z: 0}
+      - {x: 11, y: -8, z: 0}
+      - {x: 12, y: -8, z: 0}
+      - {x: 13, y: -8, z: 0}
+      - {x: 14, y: -7, z: 0}
+      - {x: 13, y: -7, z: 0}
+      - {x: 12, y: -7, z: 0}
+      - {x: 9, y: -7, z: 0}
+      - {x: 10, y: -7, z: 0}
+      - {x: 8, y: -7, z: 0}
+      - {x: 7, y: -7, z: 0}
+      - {x: 7, y: -6, z: 0}
+      - {x: 7, y: -5, z: 0}
+      - {x: 7, y: -2, z: 0}
+      - {x: 7, y: -4, z: 0}
+      - {x: 7, y: -3, z: 0}
+      - {x: 8, y: -3, z: 0}
+      - {x: 8, y: -2, z: 0}
+      - {x: 8, y: -4, z: 0}
+      - {x: 8, y: -5, z: 0}
+      - {x: 8, y: -6, z: 0}
+      - {x: 9, y: -6, z: 0}
+      - {x: 11, y: -6, z: 0}
+      - {x: 11, y: -7, z: 0}
+      - {x: 12, y: -6, z: 0}
+      - {x: 13, y: -6, z: 0}
+      - {x: 14, y: -6, z: 0}
+      - {x: 14, y: -5, z: 0}
+      - {x: 13, y: -5, z: 0}
+      - {x: 12, y: -5, z: 0}
+      - {x: 11, y: -5, z: 0}
+      - {x: 10, y: -5, z: 0}
+      - {x: 10, y: -6, z: 0}
+      - {x: 9, y: -5, z: 0}
+      - {x: 9, y: -3, z: 0}
+      - {x: 9, y: -2, z: 0}
+      - {x: 10, y: -3, z: 0}
+      - {x: 10, y: -2, z: 0}
+      - {x: 9, y: -4, z: 0}
+      - {x: 10, y: -4, z: 0}
+      - {x: 11, y: -4, z: 0}
+      - {x: 11, y: -3, z: 0}
+      - {x: 11, y: -2, z: 0}
+      - {x: 10, y: -1, z: 0}
+      - {x: 11, y: -1, z: 0}
+      - {x: 10, y: 0, z: 0}
+      - {x: 12, y: 0, z: 0}
+      - {x: 13, y: 0, z: 0}
+      - {x: 12, y: -1, z: 0}
+      - {x: 11, y: 0, z: 0}
+      - {x: 12, y: -2, z: 0}
+      - {x: 12, y: -3, z: 0}
+      - {x: 12, y: -4, z: 0}
+      - {x: 13, y: -4, z: 0}
+      - {x: 13, y: -3, z: 0}
+      - {x: 14, y: -4, z: 0}
+      - {x: 14, y: -3, z: 0}
+      - {x: 14, y: -2, z: 0}
+      - {x: 13, y: -2, z: 0}
+      - {x: 13, y: -1, z: 0}
+      - {x: 14, y: -1, z: 0}
+      - {x: 14, y: 0, z: 0}
+      - {x: -13, y: 7, z: 0}
+      tiles:
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+  - data:
+    - cellSize: 6
+      type: 0
+      positions:
+      - {x: -7, y: 4, z: 0}
+      - {x: -7, y: -4, z: 0}
+      - {x: 6, y: 0, z: 0}
+      - {x: 7, y: 0, z: 0}
+      - {x: -6, y: 4, z: 0}
+      - {x: -5, y: 4, z: 0}
+      - {x: -4, y: 4, z: 0}
+      - {x: -4, y: 3, z: 0}
+      - {x: -3, y: 4, z: 0}
+      - {x: -3, y: 3, z: 0}
+      - {x: -2, y: 4, z: 0}
+      - {x: -2, y: 3, z: 0}
+      - {x: -1, y: 4, z: 0}
+      - {x: -1, y: 3, z: 0}
+      - {x: -1, y: 2, z: 0}
+      - {x: 0, y: 2, z: 0}
+      - {x: 0, y: 3, z: 0}
+      - {x: 0, y: 4, z: 0}
+      - {x: 1, y: 4, z: 0}
+      - {x: 1, y: 3, z: 0}
+      - {x: 1, y: 2, z: 0}
+      - {x: 2, y: 2, z: 0}
+      - {x: 2, y: 3, z: 0}
+      - {x: 2, y: 4, z: 0}
+      - {x: 2, y: 1, z: 0}
+      - {x: 3, y: 1, z: 0}
+      - {x: 3, y: 2, z: 0}
+      - {x: 3, y: 3, z: 0}
+      - {x: 3, y: 4, z: 0}
+      - {x: 4, y: 4, z: 0}
+      - {x: 4, y: 3, z: 0}
+      - {x: 4, y: 2, z: 0}
+      - {x: 4, y: 1, z: 0}
+      - {x: 5, y: 0, z: 0}
+      - {x: 5, y: 1, z: 0}
+      - {x: 6, y: 1, z: 0}
+      - {x: 7, y: 1, z: 0}
+      - {x: 5, y: 2, z: 0}
+      - {x: 6, y: 2, z: 0}
+      - {x: 7, y: 2, z: 0}
+      - {x: 7, y: 3, z: 0}
+      - {x: 6, y: 3, z: 0}
+      - {x: 5, y: 3, z: 0}
+      - {x: 5, y: 4, z: 0}
+      - {x: 6, y: 4, z: 0}
+      - {x: 7, y: 4, z: 0}
+      tiles:
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+    - cellSize: 3
+      type: 1
+      positions:
+      - {x: -14, y: 7, z: 0}
+      - {x: 10, y: -1, z: 0}
+      - {x: 11, y: -1, z: 0}
+      - {x: 10, y: 0, z: 0}
+      - {x: 12, y: 0, z: 0}
+      - {x: 13, y: 0, z: 0}
+      - {x: 12, y: -1, z: 0}
+      - {x: 11, y: 0, z: 0}
+      - {x: 13, y: -1, z: 0}
+      - {x: 14, y: -1, z: 0}
+      - {x: 14, y: 0, z: 0}
+      - {x: -13, y: 7, z: 0}
+      - {x: 14, y: 1, z: 0}
+      - {x: 13, y: 1, z: 0}
+      - {x: 11, y: 1, z: 0}
+      - {x: 12, y: 1, z: 0}
+      - {x: 10, y: 1, z: 0}
+      - {x: 7, y: 1, z: 0}
+      - {x: 8, y: 1, z: 0}
+      - {x: 6, y: 1, z: 0}
+      - {x: 5, y: 1, z: 0}
+      - {x: 9, y: 1, z: 0}
+      - {x: 8, y: 2, z: 0}
+      - {x: 7, y: 2, z: 0}
+      - {x: 6, y: 2, z: 0}
+      - {x: 5, y: 2, z: 0}
+      - {x: 4, y: 2, z: 0}
+      - {x: 4, y: 1, z: 0}
+      - {x: 4, y: 3, z: 0}
+      - {x: 7, y: 3, z: 0}
+      - {x: 8, y: 3, z: 0}
+      - {x: 9, y: 3, z: 0}
+      - {x: 10, y: 2, z: 0}
+      - {x: 10, y: 3, z: 0}
+      - {x: 11, y: 2, z: 0}
+      - {x: 11, y: 3, z: 0}
+      - {x: 13, y: 2, z: 0}
+      - {x: 12, y: 3, z: 0}
+      - {x: 12, y: 2, z: 0}
+      - {x: 13, y: 3, z: 0}
+      - {x: 14, y: 2, z: 0}
+      - {x: 14, y: 3, z: 0}
+      - {x: 14, y: 4, z: 0}
+      - {x: 14, y: 5, z: 0}
+      - {x: 14, y: 6, z: 0}
+      - {x: 13, y: 7, z: 0}
+      - {x: 14, y: 7, z: 0}
+      - {x: 13, y: 5, z: 0}
+      - {x: 13, y: 4, z: 0}
+      - {x: 12, y: 4, z: 0}
+      - {x: 12, y: 5, z: 0}
+      - {x: 12, y: 6, z: 0}
+      - {x: 12, y: 7, z: 0}
+      - {x: 13, y: 6, z: 0}
+      - {x: 11, y: 4, z: 0}
+      - {x: 11, y: 5, z: 0}
+      - {x: 10, y: 4, z: 0}
+      - {x: 10, y: 5, z: 0}
+      - {x: 10, y: 6, z: 0}
+      - {x: 11, y: 7, z: 0}
+      - {x: 11, y: 6, z: 0}
+      - {x: 10, y: 7, z: 0}
+      - {x: 9, y: 7, z: 0}
+      - {x: 9, y: 6, z: 0}
+      - {x: 9, y: 5, z: 0}
+      - {x: 9, y: 4, z: 0}
+      - {x: 8, y: 4, z: 0}
+      - {x: 8, y: 5, z: 0}
+      - {x: 8, y: 6, z: 0}
+      - {x: 8, y: 7, z: 0}
+      - {x: 7, y: 6, z: 0}
+      - {x: 7, y: 5, z: 0}
+      - {x: 7, y: 7, z: 0}
+      - {x: 9, y: 2, z: 0}
+      - {x: 7, y: 4, z: 0}
+      - {x: 6, y: 3, z: 0}
+      - {x: 6, y: 4, z: 0}
+      - {x: 6, y: 5, z: 0}
+      - {x: 6, y: 6, z: 0}
+      - {x: 6, y: 7, z: 0}
+      - {x: 5, y: 7, z: 0}
+      - {x: 5, y: 6, z: 0}
+      - {x: 5, y: 5, z: 0}
+      - {x: 5, y: 4, z: 0}
+      - {x: 5, y: 3, z: 0}
+      - {x: 4, y: 4, z: 0}
+      - {x: 4, y: 5, z: 0}
+      - {x: 4, y: 6, z: 0}
+      - {x: 3, y: 7, z: 0}
+      - {x: 3, y: 6, z: 0}
+      - {x: 3, y: 5, z: 0}
+      - {x: 3, y: 3, z: 0}
+      - {x: 3, y: 4, z: 0}
+      - {x: 4, y: 7, z: 0}
+      - {x: 2, y: 3, z: 0}
+      - {x: 2, y: 4, z: 0}
+      - {x: 2, y: 5, z: 0}
+      - {x: 2, y: 6, z: 0}
+      - {x: 2, y: 7, z: 0}
+      - {x: 1, y: 7, z: 0}
+      - {x: 1, y: 6, z: 0}
+      - {x: 1, y: 4, z: 0}
+      - {x: 1, y: 5, z: 0}
+      - {x: 1, y: 3, z: 0}
+      - {x: 0, y: 3, z: 0}
+      - {x: 0, y: 4, z: 0}
+      - {x: 0, y: 5, z: 0}
+      - {x: 0, y: 6, z: 0}
+      - {x: 0, y: 7, z: 0}
+      - {x: -1, y: 6, z: 0}
+      - {x: -1, y: 5, z: 0}
+      - {x: -1, y: 4, z: 0}
+      - {x: -1, y: 3, z: 0}
+      - {x: -2, y: 3, z: 0}
+      - {x: -2, y: 4, z: 0}
+      - {x: -2, y: 5, z: 0}
+      - {x: -2, y: 6, z: 0}
+      - {x: -2, y: 7, z: 0}
+      - {x: -1, y: 7, z: 0}
+      - {x: -3, y: 7, z: 0}
+      - {x: -3, y: 6, z: 0}
+      - {x: -3, y: 5, z: 0}
+      - {x: -4, y: 5, z: 0}
+      - {x: -4, y: 6, z: 0}
+      - {x: -4, y: 7, z: 0}
+      - {x: -5, y: 7, z: 0}
+      - {x: -5, y: 6, z: 0}
+      - {x: -5, y: 5, z: 0}
+      - {x: -6, y: 5, z: 0}
+      - {x: -6, y: 6, z: 0}
+      - {x: -6, y: 7, z: 0}
+      - {x: -7, y: 7, z: 0}
+      - {x: -7, y: 6, z: 0}
+      - {x: -7, y: 5, z: 0}
+      - {x: -8, y: 5, z: 0}
+      - {x: -8, y: 6, z: 0}
+      - {x: -8, y: 7, z: 0}
+      - {x: -9, y: 7, z: 0}
+      - {x: -11, y: 7, z: 0}
+      - {x: -12, y: 7, z: 0}
+      - {x: -10, y: 7, z: 0}
+      - {x: -13, y: -8, z: 0}
+      - {x: -14, y: -8, z: 0}
+      tiles:
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+  - data:
+    - cellSize: 6
+      type: 0
+      positions:
+      - {x: -7, y: 4, z: 0}
+      - {x: 7, y: -4, z: 0}
+      - {x: -7, y: -4, z: 0}
+      - {x: -6, y: 4, z: 0}
+      - {x: -5, y: 4, z: 0}
+      - {x: -4, y: 4, z: 0}
+      - {x: -3, y: 4, z: 0}
+      - {x: 3, y: 4, z: 0}
+      - {x: 4, y: 4, z: 0}
+      - {x: 5, y: 4, z: 0}
+      - {x: 6, y: 4, z: 0}
+      - {x: 7, y: 4, z: 0}
+      - {x: 1, y: -4, z: 0}
+      - {x: 0, y: -4, z: 0}
+      - {x: -1, y: -4, z: 0}
+      - {x: -2, y: -4, z: 0}
+      - {x: 2, y: -4, z: 0}
+      tiles:
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+      - Tiles/Collider
+    - cellSize: 3
+      type: 1
+      positions:
+      - {x: 13, y: 7, z: 0}
+      - {x: 12, y: 7, z: 0}
+      - {x: -14, y: 7, z: 0}
+      - {x: 14, y: 7, z: 0}
+      - {x: -14, y: -8, z: 0}
+      - {x: -13, y: -8, z: 0}
+      - {x: -13, y: 7, z: 0}
+      - {x: -12, y: 7, z: 0}
+      - {x: -11, y: 7, z: 0}
+      - {x: -10, y: 7, z: 0}
+      - {x: -9, y: 7, z: 0}
+      - {x: -8, y: 7, z: 0}
+      - {x: -7, y: 7, z: 0}
+      - {x: -6, y: 7, z: 0}
+      - {x: -5, y: 7, z: 0}
+      - {x: 6, y: 7, z: 0}
+      - {x: 7, y: 7, z: 0}
+      - {x: 8, y: 7, z: 0}
+      - {x: 9, y: 7, z: 0}
+      - {x: 11, y: 7, z: 0}
+      - {x: -4, y: -8, z: 0}
+      - {x: -3, y: -8, z: 0}
+      - {x: -2, y: -8, z: 0}
+      - {x: -1, y: -8, z: 0}
+      - {x: 0, y: -8, z: 0}
+      - {x: 1, y: -8, z: 0}
+      - {x: 2, y: -8, z: 0}
+      - {x: 3, y: -8, z: 0}
+      - {x: 4, y: -8, z: 0}
+      - {x: 5, y: -8, z: 0}
+      - {x: 14, y: -8, z: 0}
+      - {x: 10, y: 7, z: 0}
+      tiles:
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel
+      - Tiles/Pixel

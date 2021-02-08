@@ -77,7 +77,10 @@ pipeline{
         }
         stage('Build Web') {
             when {
-                expression { env.Web == 'true' }
+                allOf {
+                    branch 'master';
+                    expression { env.Web == 'true' }
+                }
             }
             steps {
                 bat '''
