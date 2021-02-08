@@ -55,7 +55,7 @@ MonoBehaviour:
     JumpSpeed: 80
     TranslationSpeed: 10
     JumpDuration: 0.32
-    GravitySpeed: 28
+    GravitySpeed: 25
     ScrollSpeed: 5
     MaxScrollSpeed: 32
     MinScrollSpeed: 18

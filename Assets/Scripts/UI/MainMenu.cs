@@ -116,7 +116,7 @@ namespace DefaultNamespace.UI
                     break;
                 case GameSystem.GameStates.GameOver:
                     SetGameOverWindow(true);
-                    ScoreText.text = _system.PlayTime.ToString("00");
+                    ScoreText.text = _system.PlayTime.ToString("0000");
                     break;
                 case GameSystem.GameStates.Credits:
                     SetMenuWindow(false);
