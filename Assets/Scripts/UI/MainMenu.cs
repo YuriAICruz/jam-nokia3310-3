@@ -97,8 +97,6 @@ namespace DefaultNamespace.UI
         private void SetGameOverWindow(bool value)
         {
             GameOver.Object.SetActive(value);
-            var score = (int)_system.PlayTime;
-            ScoreText.text = score.ToString("");
             if (value)
                 UpdateNavigation(GameOver.Navigation);
         }
@@ -118,6 +116,7 @@ namespace DefaultNamespace.UI
                     break;
                 case GameSystem.GameStates.GameOver:
                     SetGameOverWindow(true);
+                    ScoreText.text = _system.PlayTime.ToString("00");
                     break;
                 case GameSystem.GameStates.Credits:
                     SetMenuWindow(false);
