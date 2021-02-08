@@ -70,7 +70,6 @@ public class Player : MonoBehaviour
             _gravityVelocity += GameTime.deltaTime * _settings.GravitySpeed;
         }
 
-
         var dir = -_lastPosition + _newPosition;
         var pos = _lastPosition =
             new Vector3(

@@ -4,7 +4,7 @@ namespace DefaultNamespace
 {
     public class GameTime
     {
-        public static float deltaTime => Time.deltaTime * _scale;
+        public static float deltaTime => Time.deltaTime;
         public static float fixedDeltaTime => Time.fixedDeltaTime * _scale;
 
         static float _time;
